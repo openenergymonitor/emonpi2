@@ -19,3 +19,5 @@ RaspberryPi Energy Monitor v2
 ## Firmware
 
 **[emonPi2FrontEndCM:](firmware/emonPi2FrontEndCM)** Single phase, 3 CT channel, continuous sampling, native RFM69 radio base-station firmware for the emonPi 2.
+
+**[rf69n_rxtx_test:](firmware/rf69n_rxtx_test)** Example of receiving and transmitting RFM69 native format radio data.
