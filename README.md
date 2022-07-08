@@ -5,7 +5,7 @@ The emonPi2 is an energy monitor that can monitor up to 3 AC circuits using CT s
 **Features**
 
 - 3 CT sensor inputs (333mV voltage output CT's)
-- RJ11: 3 phase voltage input
+- RJ11: 1-3 phase voltage input
 - RJ45: Pulse and temperature sensing input
 - Micro: AVR128DB32
 - MCP1501 Precision reference
