@@ -3,13 +3,13 @@
 The emonPi2 firmware can be edited and compiled using the [Arduino IDE](https://www.arduino.cc/) with [DxCore installed](https://github.com/SpenceKonde/DxCore).
 DxCore is an Arduino core for the AVR-DB microcontroller range, developed by SpenceKonde.
 
-### Available Firmwares
+### Available Firmware
 
 **[emonPi2FrontEndCM:](emonPi2FrontEndCM)** Single phase, 3 CT channel, continuous sampling, native RFM69 radio base-station firmware for the emonPi 2.
 
-### Firmware examples
+### Examples
 
-The following firmware's test specific functionality and may be useful when developing new firmware or modifying existing.
+The following examples test specific functionality and may be useful when developing new firmware or modifying existing.
 
 **[rf69n_rxtx_test:](rf69n_rxtx_test)** Example of receiving and transmitting RFM69 native format radio data.
 
