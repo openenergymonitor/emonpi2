@@ -1,8 +1,6 @@
 # emonPi2
 
-RaspberryPi Energy Monitor v2
-
-![board](emonPi2.jpg)
+A RaspberryPi Energy Monitor 
 
 - 3 CT sensor inputs (333mV voltage output CT's)
 - RJ11: 3 phase voltage input
@@ -13,6 +11,8 @@ RaspberryPi Energy Monitor v2
 - USB-C
 - I2C 128x32 Display
 - RTC I2C Breakout
+
+![board](emonPi2.jpg)
 
 ![board](v2.0.0-beta/board.png)
 
