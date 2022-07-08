@@ -32,7 +32,7 @@ Once you have the IDE installed, you then need to install [Spence Konde’s DxCo
 
 Then navigating to: *Tools > Boards > Boards Manager*, Select “DxCore by Spence Konde” and click Install. 
 
-[install_dxcore.png](img/install_dxcore.png)
+![install_dxcore.png](img/install_dxcore.png)
 
 For more information on DxCore installation see: [https://github.com/SpenceKonde/DxCore/blob/master/Installation.md](https://github.com/SpenceKonde/DxCore/blob/master/Installation.md).
 
