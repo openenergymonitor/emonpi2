@@ -50,5 +50,13 @@ https://github.com/openenergymonitor/rf69/tree/avrdb
 4\. Install SSD1306Ascii OLED display library:<br>
 https://www.arduino.cc/reference/en/libraries/ssd1306ascii
 
+**Compilation settings:**
 
+Under Tools, select the following configuration options:
+
+- Select Chip: AVR128DB32
+- Clock Speed: 24 MHz Internal
+- Bootloader serial port: UART1: TXPC0, TXPC1
+
+![compile_settings.png](img/compile_settings.png)
 
