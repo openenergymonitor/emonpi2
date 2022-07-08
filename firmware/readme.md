@@ -23,6 +23,17 @@ Command line upload:
 
 ### How to compile and upload firmware:
 
+1. Install DxCore
 https://github.com/SpenceKonde/DxCore/blob/master/Installation.md
+
+2. Download EmonLibCM library (avrdb branch)
+https://github.com/openenergymonitor/EmonLibCM/tree/avrdb
+
+3. Download emonEProm library (avrdb branch)
+https://github.com/openenergymonitor/emonEProm/tree/avrdb
+
+4. Install SSD1306Ascii OLED display library:
+https://www.arduino.cc/reference/en/libraries/ssd1306ascii
+
 
 
