@@ -33,6 +33,7 @@ https://github.com/openenergymonitor/EmonLibCM/tree/avrdb
 https://github.com/openenergymonitor/emonEProm/tree/avrdb
 
 4\. Download RF69n library (avrdb branch)<br>
+https://github.com/openenergymonitor/rf69/tree/avrdb
 
 5\. Install SSD1306Ascii OLED display library:<br>
 https://www.arduino.cc/reference/en/libraries/ssd1306ascii
