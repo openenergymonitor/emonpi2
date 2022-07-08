@@ -14,7 +14,7 @@ The emonPi2 is an energy monitor that can monitor up to 3 AC circuits using CT s
 - I2C 128x32 Display
 - RTC I2C Breakout
 
-![board](emonPi2.jpg)
+![board](emonPi2w.jpg)
 
 ![board](v2.0.0-beta/board.png)
 
