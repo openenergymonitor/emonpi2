@@ -16,17 +16,6 @@ The emonPi2 is an energy monitor that can monitor up to 3 AC circuits using CT s
 
 ![board](emonPi2w.jpg)
 
-![board](v2.0.0-beta/board.png)
+### [Hardware schematic and board files](v2.0.0-beta)
 
-## Firmware
-
-**[emonPi2FrontEndCM:](firmware/emonPi2FrontEndCM)** Single phase, 3 CT channel, continuous sampling, native RFM69 radio base-station firmware for the emonPi 2.
-
-**[rf69n_rxtx_test:](firmware/rf69n_rxtx_test)** Example of receiving and transmitting RFM69 native format radio data.
-
-Command line upload:
-
-    sudo systemctl stop emonhub
-    avrdude -Cavrdude.conf -v -pavr128db32 -carduino -D -P/dev/ttyAMA0 -b115200 -Uflash:w:emonPi2FrontEndCM.ino.hex:i 
-    sudo systemctl start emonhub
-
+### [Firmware](firmware]
