@@ -23,19 +23,31 @@ Command line upload:
 
 ### How to compile and upload firmware:
 
-1\. Install DxCore<br>
-https://github.com/SpenceKonde/DxCore/blob/master/Installation.md
+If you don’t already have the Arduino IDE it can be downloaded from here:<br>
+[https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)
 
-2\. Download EmonLibCM library (avrdb branch)<br>
+Once you have the IDE installed, you then need to install [Spence Konde’s DxCore](https://github.com/SpenceKonde/DxCore). This can be done by first pasting the following board manager URL in Arduino IDE > File > Preferences:
+
+    http://drazzy.com/package_drazzy.com_index.json
+
+Then navigating to: *Tools > Boards > Boards Manager*, Select “DxCore by Spence Konde” and click Install. 
+
+[install_dxcore.png](img/install_dxcore.png)
+
+For more information on DxCore installation see: [https://github.com/SpenceKonde/DxCore/blob/master/Installation.md](https://github.com/SpenceKonde/DxCore/blob/master/Installation.md).
+
+**Libraries**
+
+1\. Download EmonLibCM library (avrdb branch)<br>
 https://github.com/openenergymonitor/EmonLibCM/tree/avrdb
 
-3\. Download emonEProm library (avrdb branch)<br>
+2\. Download emonEProm library (avrdb branch)<br>
 https://github.com/openenergymonitor/emonEProm/tree/avrdb
 
-4\. Download RF69n library (avrdb branch)<br>
+3\. Download RF69n library (avrdb branch)<br>
 https://github.com/openenergymonitor/rf69/tree/avrdb
 
-5\. Install SSD1306Ascii OLED display library:<br>
+4\. Install SSD1306Ascii OLED display library:<br>
 https://www.arduino.cc/reference/en/libraries/ssd1306ascii
 
 
