@@ -4540,8 +4540,8 @@ design rules under a new name.</description>
 <element name="OLED" library="con-lstb-db" package="MA04-1-OLED" value="" x="50.3175" y="23.255" smashed="yes">
 <attribute name="NAME" x="47.7455" y="25.033" size="0.8128" layer="25" font="vector" ratio="20"/>
 </element>
-<element name="CTRL" library="microbuilder" package="BTN_KMR2_4.6X2.8" value="KMR2" x="50.1175" y="15.97" smashed="yes" rot="R270">
-<attribute name="NAME" x="55.0705" y="17.0495" size="0.8128" layer="25" font="vector" ratio="20" rot="R270"/>
+<element name="CTRL" library="microbuilder" package="BTN_KMR2_4.6X2.8" value="KMR2" x="50.4825" y="15.9512" smashed="yes" rot="R270">
+<attribute name="NAME" x="55.4355" y="17.0307" size="0.8128" layer="25" font="vector" ratio="20" rot="R270"/>
 </element>
 <element name="R28" library="rcl" package="R0603" value="10K" x="58.3725" y="18.51" smashed="yes" rot="R270">
 <attribute name="NAME" x="57.42" y="20.0975" size="0.8128" layer="25" font="vector" ratio="20"/>
@@ -4577,15 +4577,15 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="8" x="75.28" y="6" size="0.8128" layer="27" font="vector" ratio="20" rot="R180" display="off"/>
 <attribute name="VALUE" x="82.9" y="10.445" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="S1" library="2-1825910-7" package="218259107" value="2-1825910-7" x="50.6825" y="15.9525" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="2-1825910-7" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/2-1825910-7/te-connectivity?region=europe" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
-<attribute name="DESCRIPTION" value="Relays, Contactors &amp; Switches   Switches   Tactile Switches FSM14JH=6MM TACT SWITCH, HIGH TEMP" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
-<attribute name="HEIGHT" value="13mm" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="TE Connectivity" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="2-1825910-7" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="506-2-1825910-7" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/TE-Connectivity-PB/2-1825910-7?qs=epcAG6di8szpGFLvuwXKeQ%3D%3D" x="50.6825" y="15.9525" size="0.8128" layer="27" font="vector" ratio="20" display="off"/>
+<element name="S1" library="2-1825910-7" package="218259107" value="2-1825910-7" x="50.4825" y="15.5575" smashed="yes" rot="R270">
+<attribute name="ARROW_PART_NUMBER" value="2-1825910-7" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/2-1825910-7/te-connectivity?region=europe" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="Relays, Contactors &amp; Switches   Switches   Tactile Switches FSM14JH=6MM TACT SWITCH, HIGH TEMP" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="13mm" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="TE Connectivity" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="2-1825910-7" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="506-2-1825910-7" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/TE-Connectivity-PB/2-1825910-7?qs=epcAG6di8szpGFLvuwXKeQ%3D%3D" x="50.4825" y="15.5575" size="0.8128" layer="27" font="vector" ratio="20" rot="R270" display="off"/>
 </element>
 <element name="JP3" library="SparkFun" package="FTDI_BASIC" value="6x1" x="57.07" y="2.27" smashed="yes" rot="R180"/>
 <element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X05" package3d_urn="urn:adsk.eagle:package:22469/2" value="" x="76.597" y="10.5725" smashed="yes" rot="R180">
@@ -4817,15 +4817,7 @@ design rules under a new name.</description>
 <vertex x="93" y="-4"/>
 <vertex x="3" y="-4"/>
 </polygon>
-<contactref element="S1" pad="3"/>
-<contactref element="S1" pad="4"/>
-<wire x1="49.3175" y1="18.02" x2="47.125" y2="18.02" width="0.4064" layer="1"/>
-<wire x1="47.125" y1="18.02" x2="46.9425" y2="18.2025" width="0.4064" layer="1"/>
-<wire x1="49.3175" y1="13.92" x2="47.16" y2="13.92" width="0.4064" layer="1"/>
-<wire x1="47.16" y1="13.92" x2="46.9425" y2="13.7025" width="0.4064" layer="1"/>
-<wire x1="49.3175" y1="18.02" x2="49.3175" y2="19.615" width="0.4064" layer="1"/>
 <wire x1="54.1275" y1="21.5675" x2="54.1275" y2="23.255" width="0.4064" layer="1"/>
-<wire x1="49.3175" y1="19.615" x2="50.435" y2="20.7325" width="0.4064" layer="1"/>
 <wire x1="50.435" y1="20.7325" x2="53.2925" y2="20.7325" width="0.4064" layer="1"/>
 <wire x1="53.2925" y1="20.7325" x2="54.1275" y2="21.5675" width="0.4064" layer="1"/>
 <via x="44.4025" y="47.4025" extent="1-16" drill="0.6"/>
@@ -4863,6 +4855,17 @@ design rules under a new name.</description>
 <via x="33.925" y="80.4225" extent="1-16" drill="0.6"/>
 <contactref element="JP3" pad="GND"/>
 <contactref element="JP2" pad="5"/>
+<contactref element="S1" pad="4"/>
+<contactref element="S1" pad="2"/>
+<wire x1="49.6825" y1="18.0012" x2="49.6825" y2="19.3675" width="0.4064" layer="1"/>
+<wire x1="49.6825" y1="19.3675" x2="49.6825" y2="19.98" width="0.4064" layer="1"/>
+<wire x1="49.6825" y1="19.98" x2="50.435" y2="20.7325" width="0.4064" layer="1"/>
+<wire x1="48.2325" y1="19.2975" x2="48.3025" y2="19.3675" width="0.4064" layer="1"/>
+<wire x1="48.3025" y1="19.3675" x2="49.6825" y2="19.3675" width="0.4064" layer="1"/>
+<wire x1="48.2325" y1="12.7975" x2="48.5788" y2="12.7975" width="0.4064" layer="1"/>
+<wire x1="48.5788" y1="12.7975" x2="49.6825" y2="13.9012" width="0.4064" layer="1"/>
+<wire x1="49.6825" y1="18.0012" x2="49.6825" y2="13.9012" width="0.4064" layer="1"/>
+<via x="39.005" y="80.74" extent="1-16" drill="0.6"/>
 </signal>
 <signal name="3.3V">
 <contactref element="R7" pad="2"/>
@@ -5518,18 +5521,17 @@ design rules under a new name.</description>
 <wire x1="68.93" y1="7.27" x2="66.8975" y2="9.3025" width="0.3048" layer="1"/>
 <wire x1="66.8975" y1="9.3025" x2="64.0875" y2="9.3025" width="0.3048" layer="1"/>
 <contactref element="JP1" pad="11"/>
+<contactref element="S1" pad="3"/>
 <contactref element="S1" pad="1"/>
-<contactref element="S1" pad="2"/>
-<wire x1="50.9175" y1="18.02" x2="53.26" y2="18.02" width="0.4064" layer="1"/>
-<wire x1="53.26" y1="18.02" x2="53.4425" y2="18.2025" width="0.4064" layer="1"/>
-<wire x1="50.9175" y1="13.92" x2="53.225" y2="13.92" width="0.4064" layer="1"/>
-<wire x1="53.225" y1="13.92" x2="53.4425" y2="13.7025" width="0.4064" layer="1"/>
-<wire x1="53.4425" y1="18.2025" x2="53.985" y2="17.66" width="0.4064" layer="1"/>
-<wire x1="53.985" y1="17.66" x2="58.3725" y2="17.66" width="0.4064" layer="1"/>
-<wire x1="64.0875" y1="12.16" x2="54.88" y2="12.16" width="0.4064" layer="1"/>
-<wire x1="54.88" y1="12.16" x2="53.4425" y2="13.5975" width="0.4064" layer="1"/>
-<wire x1="53.4425" y1="13.5975" x2="53.4425" y2="13.7025" width="0.4064" layer="1"/>
-<wire x1="50.9175" y1="18.02" x2="50.9175" y2="13.92" width="0.4064" layer="1"/>
+<wire x1="52.7325" y1="19.2975" x2="51.4362" y2="18.0012" width="0.4064" layer="1"/>
+<wire x1="51.4362" y1="18.0012" x2="51.2825" y2="18.0012" width="0.4064" layer="1"/>
+<wire x1="58.3725" y1="17.66" x2="54.37" y2="17.66" width="0.4064" layer="1"/>
+<wire x1="54.37" y1="17.66" x2="52.7325" y2="19.2975" width="0.4064" layer="1"/>
+<wire x1="51.2825" y1="18.0012" x2="51.2825" y2="13.9012" width="0.4064" layer="1"/>
+<wire x1="51.2825" y1="13.9012" x2="52.3862" y2="12.7975" width="0.4064" layer="1"/>
+<wire x1="52.3862" y1="12.7975" x2="52.7325" y2="12.7975" width="0.4064" layer="1"/>
+<wire x1="52.7325" y1="12.7975" x2="53.37" y2="12.16" width="0.4064" layer="1"/>
+<wire x1="53.37" y1="12.16" x2="64.0875" y2="12.16" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$16">
 <contactref element="R11" pad="1"/>

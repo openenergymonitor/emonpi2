@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -11690,9 +11690,9 @@ RJ45</text>
 <attribute name="NAME" x="105.41" y="301.625" size="1.778" layer="95"/>
 <attribute name="VALUE" x="105.41" y="280.67" size="1.778" layer="96"/>
 </instance>
-<instance part="S1" gate="G$1" x="308.61" y="166.37" smashed="yes" rot="R90">
-<attribute name="NAME" x="300.99" y="193.04" size="1.778" layer="95" rot="R90" align="center-left"/>
-<attribute name="VALUE" x="303.53" y="193.04" size="1.778" layer="96" rot="R90" align="center-left"/>
+<instance part="S1" gate="G$1" x="306.07" y="184.15" smashed="yes">
+<attribute name="NAME" x="332.74" y="191.77" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="332.74" y="189.23" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="JP3" gate="G$1" x="118.11" y="242.57" smashed="yes" rot="R180">
 <attribute name="VALUE" x="123.19" y="252.73" size="1.778" layer="96" rot="R180"/>
@@ -11919,13 +11919,13 @@ RJ45</text>
 <pinref part="SUPPLY21" gate="GND" pin="GND"/>
 <wire x1="295.91" y1="176.53" x2="295.91" y2="173.99" width="0.1524" layer="91"/>
 <junction x="295.91" y="176.53"/>
-<pinref part="S1" gate="G$1" pin="COM_1"/>
+<wire x1="306.07" y1="176.53" x2="295.91" y2="176.53" width="0.1524" layer="91"/>
 <pinref part="S1" gate="G$1" pin="COM_2"/>
-<wire x1="308.61" y1="166.37" x2="311.15" y2="166.37" width="0.1524" layer="91"/>
-<wire x1="308.61" y1="166.37" x2="302.26" y2="166.37" width="0.1524" layer="91"/>
-<wire x1="302.26" y1="166.37" x2="302.26" y2="176.53" width="0.1524" layer="91"/>
-<junction x="308.61" y="166.37"/>
-<wire x1="302.26" y1="176.53" x2="295.91" y2="176.53" width="0.1524" layer="91"/>
+<wire x1="306.07" y1="181.61" x2="306.07" y2="176.53" width="0.1524" layer="91"/>
+<pinref part="S1" gate="G$1" pin="NO_2"/>
+<wire x1="336.55" y1="181.61" x2="336.55" y2="176.53" width="0.1524" layer="91"/>
+<wire x1="336.55" y1="176.53" x2="306.07" y2="176.53" width="0.1524" layer="91"/>
+<junction x="306.07" y="176.53"/>
 </segment>
 <segment>
 <pinref part="R10" gate="G$1" pin="2"/>
@@ -12674,13 +12674,13 @@ RJ45</text>
 <wire x1="295.91" y1="190.5" x2="295.91" y2="193.04" width="0.1524" layer="91"/>
 <wire x1="295.91" y1="190.5" x2="281.94" y2="190.5" width="0.1524" layer="91"/>
 <junction x="295.91" y="190.5"/>
+<pinref part="S1" gate="G$1" pin="COM_1"/>
+<wire x1="306.07" y1="190.5" x2="295.91" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="306.07" y1="190.5" x2="306.07" y2="184.15" width="0.1524" layer="91"/>
 <pinref part="S1" gate="G$1" pin="NO_1"/>
-<pinref part="S1" gate="G$1" pin="NO_2"/>
-<wire x1="308.61" y1="196.85" x2="311.15" y2="196.85" width="0.1524" layer="91"/>
-<wire x1="308.61" y1="196.85" x2="302.26" y2="196.85" width="0.1524" layer="91"/>
-<wire x1="302.26" y1="196.85" x2="302.26" y2="190.5" width="0.1524" layer="91"/>
-<junction x="308.61" y="196.85"/>
-<wire x1="302.26" y1="190.5" x2="295.91" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="306.07" y1="190.5" x2="336.55" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="336.55" y1="190.5" x2="336.55" y2="184.15" width="0.1524" layer="91"/>
+<junction x="306.07" y="190.5"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="11"/>
