@@ -21,6 +21,12 @@ The emonPi2 is an energy monitor that can monitor up to 3 AC circuits using CT s
 
 ### [Firmware](firmware)
 
+## Community & Support
+
+- [OpenEnergyMonitor Forums](https://community.openenergymonitor.org)
+
+OpenEnergyMonitor Shop Support: support@openenergymonitor.zendesk.com
+
 ## License
 
 - The hardware designs (schematics and CAD files) are licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
