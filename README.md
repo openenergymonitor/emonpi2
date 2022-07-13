@@ -21,19 +21,19 @@ The emonPi2 is an energy monitor that can monitor up to 3 AC circuits using CT s
 
 ### [Firmware](firmware)
 
-## Community & Support
+### Community & Support
 
 - [OpenEnergyMonitor Forums](https://community.openenergymonitor.org)
 
 OpenEnergyMonitor Shop Support: support@openenergymonitor.zendesk.com
 
-## License
+### License
 
 - The hardware designs (schematics and CAD files) are licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
 - The firmware is released under the GNU GPL V3 license The documentation is subject to GNU Free Documentation License
 - The hardware designs follow the terms of the OSHW (Open-source hardware) Statement of Principles 1.0.
 
-## Disclaimer
+### Disclaimer
 
 ```
 OUR PRODUCTS AND ASSEMBLY KITS MAY BE USED BY EXPERIENCED, SKILLED USERS, AT THEIR OWN RISK. TO THE FULLEST EXTENT PERMISSIBLE BY THE APPLICABLE LAW, WE HEREBY DISCLAIM ANY AND ALL RESPONSIBILITY, RISK, LIABILITY AND DAMAGES ARISING OUT OF DEATH OR PERSONAL INJURY RESULTING FROM ASSEMBLY OR OPERATION OF OUR PRODUCTS.
