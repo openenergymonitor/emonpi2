@@ -38,6 +38,8 @@ For more information on DxCore installation see: [https://github.com/SpenceKonde
 
 **Libraries**
 
+Next install the libraries used by the main firmware, download and place these in your Arduino libraries folder.
+
 1\. Download EmonLibCM library (avrdb branch)<br>
 https://github.com/openenergymonitor/EmonLibCM/tree/avrdb
 
@@ -51,6 +53,8 @@ https://github.com/openenergymonitor/rf69/tree/avrdb
 https://www.arduino.cc/reference/en/libraries/ssd1306ascii
 
 **Compilation settings:**
+
+With DxCore and the libraries installed the firmware should then compile. 
 
 Under Tools, select the following configuration options:
 
