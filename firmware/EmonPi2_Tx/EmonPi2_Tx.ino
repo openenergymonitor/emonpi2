@@ -441,19 +441,19 @@ void loop()
         delay(40);
       } else {
         // to show voltage, current & power factor for calibration:
-        Serial.print(F(",I1:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(1)),3);
-        Serial.print(F(",I2:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(2)),3);
-        Serial.print(F(",I3:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(3)),3);
-        Serial.print(F(",I4:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(4)),3);
-        Serial.print(F(",I5:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(5)),3);
-        Serial.print(F(",I6:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(6)),3);
+        Serial.print(F(",I1:")); Serial.print(EmonLibCM_getIrms(0),3);
+        Serial.print(F(",I2:")); Serial.print(EmonLibCM_getIrms(1),3);
+        Serial.print(F(",I3:")); Serial.print(EmonLibCM_getIrms(2),3);
+        Serial.print(F(",I4:")); Serial.print(EmonLibCM_getIrms(3),3);
+        Serial.print(F(",I5:")); Serial.print(EmonLibCM_getIrms(4),3);
+        Serial.print(F(",I6:")); Serial.print(EmonLibCM_getIrms(5),3);
         
-        Serial.print(F(",pf1:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(1)),4);
-        Serial.print(F(",pf2:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(2)),4);
-        Serial.print(F(",pf3:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(3)),4);
-        Serial.print(F(",pf4:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(4)),4);
-        Serial.print(F(",pf5:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(5)),4);
-        Serial.print(F(",pf6:")); Serial.println(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(6)),4);
+        Serial.print(F(",pf1:")); Serial.print(EmonLibCM_getPF(0),4);
+        Serial.print(F(",pf2:")); Serial.print(EmonLibCM_getPF(1),4);
+        Serial.print(F(",pf3:")); Serial.print(EmonLibCM_getPF(2),4);
+        Serial.print(F(",pf4:")); Serial.print(EmonLibCM_getPF(3),4);
+        Serial.print(F(",pf5:")); Serial.print(EmonLibCM_getPF(4),4);
+        Serial.print(F(",pf6:")); Serial.println(EmonLibCM_getPF(5),4);
         delay(80);
       }
     }
