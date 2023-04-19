@@ -3664,6 +3664,44 @@
 <circle x="54.5" y="-26.7" radius="3.04138125" width="0.15" layer="20"/>
 <circle x="67.5" y="-26.7" radius="3.04138125" width="0.15" layer="20"/>
 <circle x="80.5" y="-26.7" radius="3.04138125" width="0.15" layer="20"/>
+<text x="12" y="38" size="5" layer="20" font="vector">1</text>
+<text x="12" y="-37" size="5" layer="20" font="vector">7</text>
+<text x="47" y="69" size="3" layer="20" font="vector">USB
+</text>
+<text x="71" y="60" size="3" layer="20" font="vector" rot="R90">emonVS
+</text>
+<text x="77" y="69" size="3" layer="20" font="vector" rot="R90">GND</text>
+<text x="82" y="69" size="3" layer="20" font="vector" rot="R90">ADC</text>
+<text x="87" y="69" size="3" layer="20" font="vector" rot="R90">3V3</text>
+<text x="8" y="55" size="6" layer="20" font="vector" ratio="9">emonPi2</text>
+<text x="23" y="69" size="3" layer="20" font="vector" rot="R90">GND</text>
+<text x="27" y="69" size="3" layer="20" font="vector" rot="R90">DAT</text>
+<text x="31" y="69" size="3" layer="20" font="vector" rot="R90">3V3</text>
+<text x="36" y="69" size="3" layer="20" font="vector" rot="R90">GND</text>
+<text x="40" y="69" size="3" layer="20" font="vector" rot="R90">DAT</text>
+<text x="44" y="69" size="3" layer="20" font="vector" rot="R90">3V3</text>
+<text x="49" y="108" size="3" layer="20" font="vector" rot="SR180">Menu</text>
+<text x="14" y="4" size="3" layer="20" font="vector">OpenEnergyMonitor.org</text>
+<text x="23" y="-45" size="3" layer="20" font="vector">OpenEnergyMonitor.org</text>
+<text x="13" y="65" size="2.54" layer="20" font="vector" rot="R90">433Mhz</text>
+<text x="48" y="91" size="3" layer="20" font="vector" rot="R180">Temperature</text>
+<text x="65" y="179" size="3" layer="20" font="vector" rot="SR180">333mV CT Inputs</text>
+<text x="25" y="38" size="5" layer="20" font="vector">2</text>
+<text x="39" y="38" size="5" layer="20" font="vector">3</text>
+<text x="52" y="38" size="5" layer="20" font="vector">4</text>
+<text x="65" y="38" size="5" layer="20" font="vector">5</text>
+<text x="78" y="38" size="5" layer="20" font="vector">6</text>
+<text x="13" y="-10" size="5" layer="20" font="vector">1</text>
+<text x="26" y="-10" size="5" layer="20" font="vector">2</text>
+<text x="39" y="-10" size="5" layer="20" font="vector">3</text>
+<text x="53" y="-10" size="5" layer="20" font="vector">4</text>
+<text x="66" y="-10" size="5" layer="20" font="vector">5</text>
+<text x="79" y="-10" size="5" layer="20" font="vector">6</text>
+<text x="26" y="-37" size="5" layer="20" font="vector">8</text>
+<text x="39" y="-37" size="5" layer="20" font="vector">9</text>
+<text x="50" y="-37" size="5" layer="20" font="vector">10</text>
+<text x="64" y="-37" size="5" layer="20" font="vector">11</text>
+<text x="77" y="-37" size="5" layer="20" font="vector">12</text>
 </plain>
 <libraries>
 </libraries>
@@ -3870,4 +3908,10 @@ design rules under a new name.</description>
 </mfgpreviewcolors>
 </board>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
