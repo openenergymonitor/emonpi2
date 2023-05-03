@@ -12,3 +12,17 @@ Alternatively it is also possible to open these board designs using KiKad which 
 
 ![board](board.png)
 
+## Change Log 
+
+
+
+### V2.0.0
+
+First release 
+
+### V2.0.1
+
+- DFM tweaks 
+- Fix pad sizes 
+- Change USB-C connector footprint and enable duel orientation data connections 
+
