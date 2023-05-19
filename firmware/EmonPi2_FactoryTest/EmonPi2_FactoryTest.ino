@@ -180,7 +180,7 @@ void loop()
     Serial.print(F(",acpass:")); Serial.print(acPresent_pass);
     Serial.print(F(",vpass:")); Serial.print(voltage_pass);
     Serial.print(F(",ct_pass:")); Serial.print(ct_pass);
-
+    Serial.print(F(",radio:")); Serial.print(radio_working);
 
     Serial.println();
     delay(40);
