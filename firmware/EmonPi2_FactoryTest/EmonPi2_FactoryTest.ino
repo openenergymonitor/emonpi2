@@ -34,6 +34,8 @@ int allTemps[MAX_TEMPS];                                   // Array to receive t
 
 const byte LEDpin      = PIN_PC2;  // emonTx V3 LED
 
+bool radio_working = false;
+
 void setup() 
 {  
   //wdt_enable(WDTO_8S);
@@ -47,15 +49,20 @@ void setup()
   Serial.println(F("Trying to start radio..."));
 
   rf.setPins(PIN_PA7,PIN_PA4,PIN_PA5,PIN_PA6);
-  rf.initialize(RF69_433MHZ, EEProm.nodeID, EEProm.networkGroup);
-  rf.encrypt("89txbe4p8aik5kt3");
-   
-  Serial.print(F("RFM69CW "));
-  Serial.print(F(" Freq: "));
-  Serial.print(F("433MHz"));
-  Serial.print(F(" Group: ")); Serial.print(EEProm.networkGroup);
-  Serial.print(F(" Node: ")); Serial.print(EEProm.nodeID);
-  Serial.println();
+  if (!rf.initialize(RF69_433MHZ, 10, 210)) {
+    Serial.println(F("RADIO FAIL"));
+  } else {
+    Serial.println(F("Radio working"));
+    rf.encrypt("89txbe4p8aik5kt3");
+    radio_working = true;
+
+    Serial.print(F("RFM69CW "));
+    Serial.print(F(" Freq: "));
+    Serial.print(F("433MHz"));
+    Serial.print(F(" Group: ")); Serial.print(EEProm.networkGroup);
+    Serial.print(F(" Node: ")); Serial.print(EEProm.nodeID);
+    Serial.println();    
+  } 
   
   digitalWrite(LEDpin,LOW);
   
@@ -144,10 +151,12 @@ void loop()
 
     emontx.pulse = EmonLibCM_getPulseCount();
 
-    if (rf.sendWithRetry(5,(byte *)&emontx, sizeof(emontx))) {
-      Serial.println("ack");
-    } else {
-      Serial.println("no ack");
+    if (radio_working) {
+      if (rf.sendWithRetry(5,(byte *)&emontx, sizeof(emontx))) {
+        Serial.println("ack");
+      } else {
+        Serial.println("no ack");
+      }
     }
 
     delay(50);
