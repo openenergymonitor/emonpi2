@@ -49,7 +49,7 @@ void setup()
   Serial.println(F("Trying to start radio..."));
 
   rf.setPins(PIN_PA7,PIN_PA4,PIN_PA5,PIN_PA6);
-  if (!rf.initialize(RF69_433MHZ, 10, 210)) {
+  if (!rf.initialize(RF69_433MHZ, 15, 210)) {
     Serial.println(F("RADIO FAIL"));
   } else {
     Serial.println(F("Radio working"));
