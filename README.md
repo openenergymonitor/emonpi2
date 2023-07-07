@@ -2,7 +2,7 @@
 
 The emonPi2 is an energy monitor that can monitor up to 6 AC circuits using CT sensors and the OpenEnergyMonitor emonVs voltage sensing unit. It consists of a measurement board that sits on top of a RaspberryPi. The measurement board features the Microchip AVR128DB348 microcontroller - responsible for sampling the current and voltage waveforms and calculating the power and energy values. The RaspberryPi provides full local data logging and visualisation capability. The emonPi2 can also be used as a basestation to receive data from other 433Mhz radio nodes.
 
-![board](emonPi2.jpg)
+![board](docs/img/emonPi2.jpg)
 
 **Features**
 
