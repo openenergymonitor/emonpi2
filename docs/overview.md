@@ -4,7 +4,7 @@ github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/overvie
 
 # Overview
 
-The emonPi2 builds directly on recent emonTx4 development, providing the same 6x clip-on CT current sensor input functionality but with the RaspberryPi integrated in a single enclosure. 
+The emonPi2 builds directly on recent emonTx4 development, sharing a mostly identical PCB design. It provides the same 6x clip-on CT current sensor input functionality but with the RaspberryPi integrated in a single enclosure.
 
 Like the emonTx4, the emonPi2 uses the same focus on higher accuracy, more CT channels, precision voltage sensing and the new microcontroller core. When combined with the emonVS voltage sensor and a selection of CT sensors, it provides an end-to-end electricity monitoring solution perfect for monitoring home consumption, solar generation, EV charging, heat pumps, battery storage among other applications.
 
