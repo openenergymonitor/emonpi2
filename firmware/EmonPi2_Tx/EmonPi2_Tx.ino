@@ -1,5 +1,5 @@
 /*
-  emonTxV4.0 Continuous Sampling
+  emonPi2 Continuous Sampling
   using EmonLibCM https://github.com/openenergymonitor/EmonLibCM
   Authors: Robin Emley, Robert Wall, Trystan Lea
   
@@ -10,18 +10,7 @@
 
 
 Change Log:
-v1.0.0: First release of EmonTxV4 Continuous Monitoring Firmware (based on EmonTx v3 CM Firmware)
-v1.1.0: Fixed emonEProm implementation for AVR-DB & new serial config implementation
-v1.2.0: LowPowerLabs radio format, with option to switch to JeeLib classic or native.
-v1.3.0: Read and calibrate reference voltage at startup
-v1.4.0: Option to output serial data as JSON (Brian Orpin)
-v1.5.0: emonEProm fixed pulse count data type issue
-v1.5.1: default node id set to 17, swap nodeid DIP, zero all 6 energy values
-v1.5.2: emonEProm fixed EEWL overlap
-v1.5.3: Slightly slower sample rate to improve zero power performance
-        temperature sensing disabled if no temperature sensors detected at startup
-v1.5.4: Fix emonEProm EEWL overlap properly
-v1.5.5: RFM69_LPL library update use setPins
+v0.1.0: emonPi2 dev firmwarwe
 
 */
 #define Serial Serial3
@@ -32,7 +21,7 @@ v1.5.5: RFM69_LPL library update use setPins
 
 #define RadioFormat RFM69_LOW_POWER_LABS
 
-const char *firmware_version = {"1.5.4\n\r"};
+const char *firmware_version = {"1.0.0\n\r"};
 /*
 
 emonhub.conf node decoder (nodeid is 17 when switch is off, 18 when switch is on)
@@ -172,7 +161,7 @@ void setup()
   Serial.begin(115200);
   
   #ifdef DEBUG
-    Serial.print(F("emonTx V4 CM Continuous Monitoring V")); Serial.write(firmware_version);
+    Serial.print(F("emonPi2 CM Continuous Monitoring V")); Serial.write(firmware_version);
     Serial.println(F("OpenEnergyMonitor.org"));
   #else
     Serial.println(F("describe:EmonTX4CM"));
