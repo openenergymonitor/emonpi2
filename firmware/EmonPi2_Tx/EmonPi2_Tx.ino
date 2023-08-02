@@ -25,6 +25,7 @@ v1.5.5: RFM69_LPL library update use setPins
 v1.5.6: uses version 3.0.8 of EmonLibCM avrdb branch
         reduces interference caused by DS18B20 temperature sensing
 v1.5.7: Fix disabling of temperature sensing at startup if none detected
+
 */
 #define Serial Serial3
 
