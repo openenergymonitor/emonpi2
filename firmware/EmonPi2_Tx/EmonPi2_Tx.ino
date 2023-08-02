@@ -22,6 +22,9 @@ v1.5.3: Slightly slower sample rate to improve zero power performance
         temperature sensing disabled if no temperature sensors detected at startup
 v1.5.4: Fix emonEProm EEWL overlap properly
 v1.5.5: RFM69_LPL library update use setPins
+v1.5.6: uses version 3.0.8 of EmonLibCM avrdb branch
+        reduces interference caused by DS18B20 temperature sensing
+v1.5.7: Fix disabling of temperature sensing at startup if none detected
 
 */
 #define Serial Serial3
@@ -32,7 +35,7 @@ v1.5.5: RFM69_LPL library update use setPins
 
 #define RadioFormat RFM69_LOW_POWER_LABS
 
-const char *firmware_version = {"1.5.4\n\r"};
+const char *firmware_version = {"1.5.7\n\r"};
 /*
 
 emonhub.conf node decoder (nodeid is 17 when switch is off, 18 when switch is on)
@@ -40,7 +43,7 @@ See: https://github.com/openenergymonitor/emonhub/blob/emon-pi/configuration.md
 copy the following into emonhub.conf:
 
 [[17]]
-  nodename = emonTx4cm15
+  nodename = emonPi2_17
   [[[rx]]]
     names = MSG, Vrms, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, T1, T2, T3, pulse
     datacodes = L,h,h,h,h,h,h,h,l,l,l,l,l,l,h,h,h,L
@@ -229,7 +232,7 @@ void setup()
   EVmem.dump_buffer();
 #endif
 
-  double reference = read_reference();
+  double reference = 1.024; // read_reference();
   Serial.print(F("Reference voltage calibration: "));
   Serial.println(reference,4);
 
@@ -288,19 +291,18 @@ void setup()
   EmonLibCM_TemperatureEnable(EEProm.temp_enable);  
   EmonLibCM_Init();                                                    // Start continuous monitoring.
   emontx.Msg = 0;
-  printTemperatureSensorAddresses();
-
-  byte numSensors = EmonLibCM_getTemperatureSensorCount();
-  if (numSensors==0) {
-    Serial.println(F("No temperature sensors detected, disabling temperature"));
-    EEProm.temp_enable = 0;
-    EmonLibCM_TemperatureEnable(EEProm.temp_enable); 
-  }
   
+  if (EEProm.temp_enable) {
+    printTemperatureSensorAddresses();
+
+    byte numSensors = EmonLibCM_getTemperatureSensorCount();
+    if (numSensors==0) {
+      Serial.println(F("No temperature sensors detected, disabling temperature"));
+      EmonLibCM_TemperatureEnable(false);
+    }
+  }
   // Speed up startup by making first reading 2s
   EmonLibCM_datalog_period(2.0);
-
-  emontx.T1 = 0;
 }
 
 void loop()             
@@ -355,7 +357,7 @@ void loop()
       emontx.Vrms = EmonLibCM_getAssumedVrms() * 100;
     }
     
-    // emontx.T1 = allTemps[0];
+    emontx.T1 = allTemps[0];
     emontx.T2 = allTemps[1];
     emontx.T3 = allTemps[2];
 
@@ -364,21 +366,20 @@ void loop()
     if (EEProm.rf_on) {
       PayloadTX tmp = emontx;
 
-      /*
       #if RadioFormat == RFM69_LOW_POWER_LABS
         rf.sendWithRetry(5,(byte *)&tmp, sizeof(tmp));
       #else
         rf.send(0, (byte *)&tmp, sizeof(tmp));
       #endif
-      */
-      
+
+      /*
       if (rf.sendWithRetry(5,(byte *)&tmp, sizeof(tmp))) {
         Serial.println("ack");
         emontx.T1 += rf.retry_count();
       } else {
         emontx.T1 += rf.retry_count()+1;
       }
-      
+      */
       
       delay(50);
     }
@@ -445,19 +446,19 @@ void loop()
         delay(40);
       } else {
         // to show voltage, current & power factor for calibration:
-        Serial.print(F(",I1:")); Serial.print(EmonLibCM_getIrms(0),3);
-        Serial.print(F(",I2:")); Serial.print(EmonLibCM_getIrms(1),3);
-        Serial.print(F(",I3:")); Serial.print(EmonLibCM_getIrms(2),3);
-        Serial.print(F(",I4:")); Serial.print(EmonLibCM_getIrms(3),3);
-        Serial.print(F(",I5:")); Serial.print(EmonLibCM_getIrms(4),3);
-        Serial.print(F(",I6:")); Serial.print(EmonLibCM_getIrms(5),3);
+        Serial.print(F(",I1:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(1)),3);
+        Serial.print(F(",I2:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(2)),3);
+        Serial.print(F(",I3:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(3)),3);
+        Serial.print(F(",I4:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(4)),3);
+        Serial.print(F(",I5:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(5)),3);
+        Serial.print(F(",I6:")); Serial.print(EmonLibCM_getIrms(EmonLibCM_getLogicalChannel(6)),3);
         
-        Serial.print(F(",pf1:")); Serial.print(EmonLibCM_getPF(0),4);
-        Serial.print(F(",pf2:")); Serial.print(EmonLibCM_getPF(1),4);
-        Serial.print(F(",pf3:")); Serial.print(EmonLibCM_getPF(2),4);
-        Serial.print(F(",pf4:")); Serial.print(EmonLibCM_getPF(3),4);
-        Serial.print(F(",pf5:")); Serial.print(EmonLibCM_getPF(4),4);
-        Serial.print(F(",pf6:")); Serial.println(EmonLibCM_getPF(5),4);
+        Serial.print(F(",pf1:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(1)),4);
+        Serial.print(F(",pf2:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(2)),4);
+        Serial.print(F(",pf3:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(3)),4);
+        Serial.print(F(",pf4:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(4)),4);
+        Serial.print(F(",pf5:")); Serial.print(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(5)),4);
+        Serial.print(F(",pf6:")); Serial.println(EmonLibCM_getPF(EmonLibCM_getLogicalChannel(6)),4);
         delay(80);
       }
     }
