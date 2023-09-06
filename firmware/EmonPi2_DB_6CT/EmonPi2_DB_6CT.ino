@@ -196,7 +196,7 @@ void setup()
   EVmem.dump_buffer();
 #endif
 
-  double reference = read_reference();
+  double reference = 1.024;
   Serial.print(F("Reference voltage calibration: "));
   Serial.println(reference,4);
 
