@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -202,10 +202,10 @@
 <wire x1="85.8" y1="29.3" x2="85.8" y2="37.05" width="0.15" layer="20"/>
 <wire x1="85.8" y1="37.05" x2="73.8" y2="37.05" width="0.15" layer="20"/>
 <wire x1="73.8" y1="37.05" x2="73.8" y2="41.3" width="0.15" layer="20"/>
-<wire x1="45.3" y1="5.8" x2="59.3" y2="5.8" width="0.15" layer="20"/>
+<wire x1="29.8" y1="5.8" x2="59.3" y2="5.8" width="0.15" layer="20"/>
 <wire x1="59.3" y1="5.8" x2="59.3" y2="8.8" width="0.15" layer="20"/>
-<wire x1="59.3" y1="8.8" x2="45.3" y2="8.8" width="0.15" layer="20"/>
-<wire x1="45.3" y1="8.8" x2="45.3" y2="5.8" width="0.15" layer="20"/>
+<wire x1="59.3" y1="8.8" x2="29.8" y2="8.8" width="0.15" layer="20"/>
+<wire x1="29.8" y1="8.8" x2="29.8" y2="5.8" width="0.15" layer="20"/>
 <circle x="3.66" y="40.9" radius="1.7" width="0.15" layer="20"/>
 <circle x="87.98" y="40.87" radius="1.7" width="0.15" layer="20"/>
 <circle x="88" y="3.66" radius="1.7" width="0.15" layer="20"/>
@@ -216,7 +216,7 @@
 <text x="77.8" y="28.3" size="2.1844" layer="20" rot="R90" align="bottom-right">GND</text>
 <text x="81.3" y="28.3" size="2.1844" layer="158" rot="R90" align="bottom-right">ADC</text>
 <text x="84.8" y="28.3" size="2.1844" layer="20" rot="R90" align="bottom-right">3V3</text>
-<text x="10.8" y="5.3" size="5.08" layer="20" ratio="9">emon</text>
+<text x="15" y="11" size="5.08" layer="20" ratio="9">emon</text>
 <text x="22.8" y="28.3" size="2.1844" layer="20" rot="R90" align="bottom-right">GND</text>
 <text x="26.3" y="28.3" size="2.1844" layer="158" rot="R90" align="bottom-right">DAT</text>
 <text x="29.8" y="28.3" size="2.1844" layer="20" rot="R90" align="bottom-right">3V3</text>
@@ -226,14 +226,14 @@
 <text x="7.8" y="24.8" size="2.54" layer="20">433
 Mhz</text>
 <text x="39.3" y="40.3" size="2.1844" layer="20" rot="R180">Temperature</text>
-<text x="28.3" y="5.3" size="5.08" layer="158" ratio="9">Pi2</text>
+<text x="33" y="11" size="5.08" layer="158" ratio="9">Pi2</text>
 <wire x1="30.8" y1="28.3" x2="30.8" y2="21.3" width="0.1524" layer="20"/>
 <wire x1="19.8" y1="28.3" x2="19.8" y2="21.3" width="0.1524" layer="20"/>
 <wire x1="41.8" y1="28.3" x2="41.8" y2="21.3" width="0.1524" layer="20"/>
 <wire x1="73.8" y1="28.3" x2="73.8" y2="20.8" width="0.1524" layer="20"/>
 <wire x1="56.8" y1="28.3" x2="56.8" y2="20.8" width="0.1524" layer="20"/>
 <wire x1="85.8" y1="28.3" x2="85.8" y2="20.8" width="0.1524" layer="20"/>
-<text x="58.8" y="10.3" size="2.1844" layer="20" align="bottom-right">SD CARD</text>
+<text x="15" y="8.5" size="2.1844" layer="20" rot="R180" align="bottom-right">SD CARD</text>
 <text x="65.8" y="22.3" size="1.778" layer="20" rot="R180" align="center">voltage
 sensor</text>
 </plain>

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -197,10 +197,12 @@
 <circle x="3.56" y="3.55" radius="1.7" width="0.15" layer="20"/>
 <circle x="87.89" y="3.56" radius="1.7" width="0.15" layer="20"/>
 <circle x="87.89" y="40.77" radius="1.7" width="0.15" layer="20"/>
-<wire x1="12.7" y1="26.2" x2="65.7" y2="26.2" width="0.1524" layer="20"/>
-<wire x1="65.7" y1="25.7" x2="65.7" y2="10.7" width="0.1524" layer="20"/>
-<wire x1="65.7" y1="9.2" x2="12.7" y2="9.2" width="0.1524" layer="20"/>
-<wire x1="12.7" y1="10.2" x2="12.7" y2="25.2" width="0.1524" layer="20"/>
+<wire x1="12.7" y1="26.2" x2="47.5" y2="26.2" width="0.1524" layer="20"/>
+<wire x1="48.5" y1="26.2" x2="65.7" y2="26.2" width="0.1524" layer="20"/>
+<wire x1="65.7" y1="26.2" x2="65.7" y2="9.2" width="0.1524" layer="20"/>
+<wire x1="65.7" y1="9.2" x2="48.5" y2="9.2" width="0.1524" layer="20"/>
+<wire x1="47.5" y1="9.2" x2="12.7" y2="9.2" width="0.1524" layer="20"/>
+<wire x1="12.7" y1="9.2" x2="12.7" y2="26.2" width="0.1524" layer="20"/>
 <text x="27.2" y="3.7" size="3" layer="158">EnergyMonitor</text>
 <text x="12.7" y="37.7" size="2.54" layer="20" align="center">CT 1</text>
 <text x="16.7" y="3.7" size="3" layer="20">Open</text>
@@ -213,10 +215,16 @@
 <text x="78.7" y="13.7" size="1.27" layer="20" rot="R180" align="center">OPEN
 HARDWARE</text>
 <text x="46.7" y="41.7" size="2.54" layer="20" align="center">333 mV CT Sensors</text>
-<wire x1="12.7" y1="25.2" x2="12.7" y2="26.2" width="0.1524" layer="159"/>
-<wire x1="65.7" y1="26.2" x2="65.7" y2="25.7" width="0.1524" layer="159"/>
-<wire x1="65.7" y1="10.7" x2="65.7" y2="9.2" width="0.1524" layer="159"/>
-<wire x1="12.7" y1="9.2" x2="12.7" y2="10.2" width="0.1524" layer="159"/>
+<wire x1="47.5" y1="25.5" x2="13.5" y2="25.5" width="0.1524" layer="20"/>
+<wire x1="13.5" y1="25.5" x2="13.5" y2="10" width="0.1524" layer="20"/>
+<wire x1="13.5" y1="10" x2="47.5" y2="10" width="0.1524" layer="20"/>
+<wire x1="47.5" y1="10" x2="47.5" y2="9.2" width="0.1524" layer="20"/>
+<wire x1="48.5" y1="9.2" x2="48.5" y2="10" width="0.1524" layer="20"/>
+<wire x1="48.5" y1="10" x2="65" y2="10" width="0.1524" layer="20"/>
+<wire x1="65" y1="10" x2="65" y2="25.5" width="0.1524" layer="20"/>
+<wire x1="65" y1="25.5" x2="48.5" y2="25.5" width="0.1524" layer="20"/>
+<wire x1="48.5" y1="25.5" x2="48.5" y2="26.2" width="0.1524" layer="20"/>
+<wire x1="47.5" y1="26.2" x2="47.5" y2="25.5" width="0.1524" layer="20"/>
 </plain>
 <libraries>
 <library name="ohw-logo">
