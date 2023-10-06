@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -235,6 +235,21 @@
 <text x="65.8" y="22.3" size="1.778" layer="20" rot="R180" align="center">voltage</text>
 <text x="7.8" y="24.8" size="2.54" layer="20">Mhz</text>
 <text x="65.8" y="19.3" size="1.778" layer="20" rot="R180" align="center">sensor</text>
+<dimension x1="5.359984375" y1="3.66735" x2="1.960015625" y2="3.65265" x3="3.69000625" y3="-3.28" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="89.699815625" y1="3.684946875" x2="86.300184375" y2="3.635053125" x3="88.1499875" y3="-6.56" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="88.15" y1="3.69" x2="3.69" y2="3.69" x3="45.92" y3="-14.76" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="0.1" y1="3.6" x2="91.5" y2="3.7" x3="45.82826875" y3="-22.1872" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="7.300215625" y1="35.761053125" x2="14.299784375" y2="35.838946875" x3="10.660003125" y3="48.38" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="19.8" y1="37.05" x2="41.8" y2="37.05" x3="30.8" y3="48.38" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="44.6" y1="33.3" x2="55" y2="33.3" x3="49.8" y3="47.97" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="57.3" y1="41.3" x2="73.8" y2="41.3" x3="65.55" y3="48.79" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="85.8" y1="37.05" x2="73.8" y2="37.05" x3="79.8" y3="48.79" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="85.8" y1="29.3" x2="85.8" y2="37.05" x3="95.12" y3="33.175" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="55" y1="29.3" x2="55" y2="33.3" x3="56.17" y3="31.3" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="19.8" y1="29.3" x2="19.8" y2="37.05" x3="17.22" y3="33.175" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="29.8" y1="5.8" x2="59.3" y2="5.8" x3="44.55" y3="2.05" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="59.3" y1="5.8" x2="59.3" y2="8.8" x3="60.9" y3="7.3" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="87.9" y1="0.1" x2="87.9" y2="44.4" x3="102" y3="22.25" textsize="1.778" layer="1" dtype="diameter"/>
 </plain>
 <libraries>
 </libraries>

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -225,6 +225,16 @@ HARDWARE</text>
 <wire x1="65" y1="25.5" x2="48.5" y2="25.5" width="0.1524" layer="20"/>
 <wire x1="48.5" y1="25.5" x2="48.5" y2="26.2" width="0.1524" layer="20"/>
 <wire x1="47.5" y1="26.2" x2="47.5" y2="25.5" width="0.1524" layer="20"/>
+<dimension x1="5.2599875" y1="3.5438375" x2="1.8600125" y2="3.5561625" x3="3.500003125" y3="-13" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="89.589928125" y1="3.57550625" x2="86.190071875" y2="3.54449375" x3="88.00000625" y3="-8.499996875" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="87.8" y1="44.3" x2="88" y2="0" x3="96.399825" y3="22.188371875" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="9.658809375" y1="31.665828125" x2="15.741190625" y2="31.734171875" x3="12.499990625" y3="49.5" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="22.658915625" y1="31.65746875" x2="28.741084375" y2="31.74253125" x3="25.50000625" y3="46" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="12.5" y1="31.5" x2="25.5" y2="31.5" x3="19" y3="22.5" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="12.7" y1="9.2" x2="12.7" y2="26.2" x3="7.5" y3="17.7" textsize="1.778" layer="1" dtype="diameter"/>
+<dimension x1="0" y1="3.5" x2="91.4" y2="3.6" x3="45.72669375" y3="-20.84789375" textsize="1.778" layer="1"/>
+<dimension x1="3.5" y1="3.6" x2="87.9" y2="3.4" x3="45.6582875" y3="-14.10298125" textsize="1.778" layer="1"/>
+<dimension x1="12.7" y1="9.2" x2="65.7" y2="9.2" x3="39.2" y3="-3.6" textsize="1.778" layer="1"/>
 </plain>
 <libraries>
 <library name="ohw-logo">
