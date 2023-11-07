@@ -18,7 +18,7 @@ The following examples test specific functionality and may be useful when develo
 Command line upload:
 
     sudo systemctl stop emonhub
-    avrdude -Cavrdude.conf -v -pavr128db32 -carduino -D -P/dev/ttyAMA0 -b115200 -Uflash:w:emonPi2FrontEndCM.ino.hex:i 
+    avrdude -C/opt/openenergymonitor/EmonScripts/update/avrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyAMA0 -b115200 -Uflash:w:EmonPi2_DB_6CT_v1_0_0.ino.hex:i
     sudo systemctl start emonhub
 
 ### How to compile and upload firmware:
