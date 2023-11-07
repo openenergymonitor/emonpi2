@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.25" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -196,9 +196,9 @@
 <wire x1="42.3" y1="29.3" x2="42.3" y2="37.05" width="0.000009375" layer="20"/>
 <wire x1="42.3" y1="37.05" x2="19.3" y2="37.05" width="0.000009375" layer="20"/>
 <wire x1="19.3" y1="37.05" x2="19.3" y2="29.3" width="0.000009375" layer="20"/>
-<wire x1="57.3" y1="29.3" x2="86.3" y2="29.3" width="0.000009375" layer="20"/>
-<wire x1="73.8" y1="41.3" x2="57.3" y2="41.3" width="0.000009375" layer="20"/>
-<wire x1="57.3" y1="41.3" x2="57.3" y2="29.3" width="0.15" layer="20"/>
+<wire x1="57.05" y1="29.3" x2="86.3" y2="29.3" width="0.000009375" layer="20"/>
+<wire x1="73.8" y1="41.3" x2="57.05" y2="41.3" width="0.000009375" layer="20"/>
+<wire x1="57.05" y1="41.3" x2="57.05" y2="29.3" width="0.000009375" layer="20"/>
 <wire x1="86.3" y1="29.3" x2="86.3" y2="37.05" width="0.000009375" layer="20"/>
 <wire x1="86.3" y1="37.05" x2="73.8" y2="37.05" width="0.000009375" layer="20"/>
 <wire x1="73.8" y1="37.05" x2="73.8" y2="41.3" width="0.000009375" layer="20"/>
