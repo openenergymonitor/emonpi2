@@ -15,6 +15,11 @@ v1.0.0: First release of EmonPi2 DB Continuous Monitoring Firmware (based on Emo
 */
 #define Serial Serial3
 
+#include <Wire.h>
+#include "SSD1306Ascii.h"
+#include "SSD1306AsciiWire.h"
+SSD1306AsciiWire oled;
+
 #define RFM69_JEELIB_CLASSIC 1
 #define RFM69_JEELIB_NATIVE 2
 #define RFM69_LOW_POWER_LABS 3
@@ -124,6 +129,28 @@ const byte LEDpin      = PIN_PC2;  // emonPi2 LED
 //----------------------------------------Setup--------------------------------------------------
 void setup() 
 {  
+  delay(1000);
+  Wire1.swap(2);
+  Wire1.begin();
+  Wire1.setClock(400000L);
+
+  oled.begin(&Adafruit128x64, 0x3C);
+
+  oled.setFont(CalLite24);
+  oled.setLetterSpacing(2);
+
+  oled.clear();
+  oled.setCursor(15,1);
+  oled.print("emonPi2");
+  oled.setFont(Arial14);
+  oled.setCursor(40,6);
+
+  oled.print("starting...");
+  Wire1.end();
+  
+  pinMode(PIN_PB2,INPUT);
+  pinMode(PIN_PB3,INPUT);
+  
   //wdt_enable(WDTO_8S);
   
   pinMode(LEDpin, OUTPUT);
