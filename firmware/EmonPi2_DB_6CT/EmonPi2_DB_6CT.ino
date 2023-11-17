@@ -26,7 +26,7 @@ SSD1306AsciiWire oled;
 
 #define RadioFormat RFM69_LOW_POWER_LABS
 
-const char *firmware_version = {"1.0.0\n\r"};
+const char *firmware_version = {"1.0.1\n\r"};
 /*
 
 emonhub.conf node decoder (nodeid is 27 when switch is off, 18 when switch is on)
@@ -223,7 +223,7 @@ void setup()
   EVmem.dump_buffer();
 #endif
 
-  double reference = 1.024;
+  double reference = read_reference();
   Serial.print(F("Reference voltage calibration: "));
   Serial.println(reference,4);
 
