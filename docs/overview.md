@@ -8,7 +8,7 @@ The emonPi2 builds directly on recent emonTx4 development, sharing a mostly iden
 
 Like the emonTx4, the emonPi2 uses the same focus on higher accuracy, more CT channels, precision voltage sensing and the new microcontroller core. When combined with the emonVS voltage sensor and a selection of CT sensors, it provides an end-to-end electricity monitoring solution perfect for monitoring home consumption, solar generation, EV charging, heat pumps, battery storage among other applications.
 
-![emonPi2.jpg](img/emonPi2.jpg)
+![emonPi2.jpg](img/emonPi2_01.jpg)
 
 ## Key features
 
