@@ -18,28 +18,13 @@ The emonPi2 firmware can be edited and compiled using [PlatformIO](https://platf
 
 **[EmonPi2_CM_3x_temperature_transmitter:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_3x_temperature_transmitter)** Designed for use when emonPi2 measurement board is used in standalone transmitter mode and where temperature sensing is required. Single phase, 6 CT channel, continuous sampling using the emonLibCM library, cumulative energy persisted to EEPROM, serial configuration and data output. *See [EmonTx4 DS18B20 Temperature sensing & firmware release 1.5.7](https://community.openenergymonitor.org/t/emonpi2-ds18b20-temperature-sensing-firmware-release-1-5-7/23496/2) for note on performance implications.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_3x_temperature_transmitter/compiled)
 
-## Updating firmware using an emonPi/emonBase (recommended)
+## Updating firmware
 
-The easiest way of updating the emonPi2 firmware is to connect it to an emonBase with a USB cable and then use the firmware upload tool available at `Setup > Admin > Update > Firmware`.
-
-```{warning} 
-
-**System update may be required:** If you don not see the latest firmware version as listed above in the firmware list a full system update is required first.
-```
-
-**Note: Upload via USB-C will only work if connected in the right orientation. Try turning the USB-C connector around if upload fails.** Some USB-C connectors have a smooth side on one side and jagged connection of the metal fold on the other. On the cables we have here, the smooth side should be facing up towards the top/front face of the emonPi2:
-
-![usbc_orientation1.jpeg](img/usbc_orientation1.jpeg)
-
-![usbc_orientation2.jpeg](img/usbc_orientation2.jpeg)
-
-Refresh the update page after connecting the USB cable. You should now see port `ttyUSB0` appear in the 'Select port` list.
+The easiest way of updating the emonPi2 firmware is to use the firmware upload tool available at `Setup > Admin > Update > Firmware`.
 
 ![emonsd_firmware_upload.png](img/emonsd_firmware_upload2.png)
 
-Double check the serial port, this is likely to be 'ttyUSB0' when plugged in via USB device connected. Select 'emonPi2' from hardware.
-
-The standard radio format is 'LowPowerLabs', if you wish to use the emonPi2 with an existing system running JeeLib classic radio format you can select the JeeLib classic radio format here.
+Select serial port 'ttyAMA0' and then select 'emonPi2' from hardware.
 
 ## Upload pre-compiled using EmonScripts emonupload2 tool 
 
@@ -73,11 +58,11 @@ emonupload2 tool can also be run on any other linux computer by cloning the Emon
 
 Alternatively to upload the same pre-compiled firmware via command line on emonPi / emonBase: 
 
-    avrdude -C/opt/openenergymonitor/EmonScripts/update/avrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonTxV4_LPL.hex:i 
+    avrdude -C/opt/openenergymonitor/EmonScripts/update/avrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonPi2_DB_6CT_1phase_v1_0_2.ino.hex:i 
 
 Or using differant computer, ensure `avrdude.conf` has `avr128db48` entry i.e DxCore see below instructions 
 
-    avrdude -Cavrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonTxV4_LPL.hex:i 
+    avrdude -Cavrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonPi2_DB_6CT_1phase_v1_0_2.ino.hex:i 
     
 You will need avrdude installed (tested on version 6.3-2017) and the custom DxCore avrdude.conf. This can be downloaded here: [DxCore avrdude.conf](https://raw.githubusercontent.com/openenergymonitor/emonpi2/main/firmware/avrdude.conf).
 
@@ -88,7 +73,7 @@ You will need avrdude installed (tested on version 6.3-2017) and the custom DxCo
 Clone the emonTx V4 repo 
 
     git clone https://github.com/openenergymonitor/emonpi2
-    cd emonpi2/firmware/EmonPi2_DB_6CT
+    cd emonpi2/firmware/EmonPi2_DB_6CT_1phase
     
 Install PlatformIO core then to compile and upload  
 
