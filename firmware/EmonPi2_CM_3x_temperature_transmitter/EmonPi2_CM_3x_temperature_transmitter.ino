@@ -26,6 +26,8 @@ v1.5.6: uses version 3.0.8 of EmonLibCM avrdb branch
         reduces interference caused by DS18B20 temperature sensing
 v1.5.7: Fix disabling of temperature sensing at startup if none detected
 
+EmonPi2 variant: identical to EmonTx4 emonLibCM firmware appart from different radio and pulse pin map 
+
 */
 #define Serial Serial3
 
@@ -232,7 +234,7 @@ void setup()
   EVmem.dump_buffer();
 #endif
 
-  double reference = 1.024; // read_reference();
+  double reference = read_reference();
   Serial.print(F("Reference voltage calibration: "));
   Serial.println(reference,4);
 
@@ -261,7 +263,7 @@ void setup()
   EmonLibCM_setAssumedVrms(EEProm.assumedVrms);
 
   EmonLibCM_setPulseEnable(EEProm.pulse_enable);                       // Enable pulse counting
-  EmonLibCM_setPulsePin(PIN_PB5);
+  EmonLibCM_setPulsePin(PIN_PB5);                                      // Pulse 1 (can also be PC0: Pulse 2)
   EmonLibCM_setPulseMinPeriod(EEProm.pulse_period);
 
   EmonLibCM_setTemperatureDataPin(PIN_PB4);                            // OneWire data pin (emonTx V4)

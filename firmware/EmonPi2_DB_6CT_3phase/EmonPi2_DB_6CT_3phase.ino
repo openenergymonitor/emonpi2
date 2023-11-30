@@ -26,7 +26,7 @@ SSD1306AsciiWire oled;
 
 #define RadioFormat RFM69_LOW_POWER_LABS
 
-const char *firmware_version = {"1.0.1\n\r"};
+const char *firmware_version = {"1.0.2\n\r"};
 /*
 
 emonhub.conf node decoder (nodeid is 27 when switch is off, 18 when switch is on)
@@ -76,7 +76,7 @@ copy the following into emonhub.conf:
 
 RFM69 rf;
 
-#define NUM_V_CHANNELS 1                                   // SET TO 1 FOR SINGLE PHASE
+#define NUM_V_CHANNELS 3                                   // SET TO 1 FOR SINGLE PHASE
 #define NUM_I_CHANNELS 6
 
 // 50 Bytes
@@ -256,11 +256,11 @@ void setup()
   #if NUM_V_CHANNELS == 3
     
     EmonLibDB_set_pInput(1, 1); // Phase 1
-    EmonLibDB_set_pInput(2, 1); // Phase 2
-    EmonLibDB_set_pInput(3, 1); // Phase 3
+    EmonLibDB_set_pInput(2, 2); // Phase 2
+    EmonLibDB_set_pInput(3, 3); // Phase 3
     EmonLibDB_set_pInput(4, 1); // Phase 1
-    EmonLibDB_set_pInput(5, 1); // Phase 2
-    EmonLibDB_set_pInput(6, 1); // Phase 3
+    EmonLibDB_set_pInput(5, 2); // Phase 2
+    EmonLibDB_set_pInput(6, 3); // Phase 3
     /*
     EmonLibDB_set_pInput(1, 1, 2);               // CT1 between V1 & V2    
     EmonLibDB_set_pInput(2, 2, 3);               // CT2 between V2 & V3  (etc)
