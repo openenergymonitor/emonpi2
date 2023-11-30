@@ -8,21 +8,15 @@ The emonPi2 firmware can be edited and compiled using [PlatformIO](https://platf
 
 ## Available Firmware
 
-**[EmonPi2_DB_6CT_1phase:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase)** Single phase, 6 CT channel, continuous sampling using the emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output.
-
-Pre-compiled hex: [https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase/compiled](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase/compiled)
-
-**[EmonPi2_DB_6CT_3phase:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_3phase)** Three phase, 6 CT channel, continuous sampling using the emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output.
-
-Pre-compiled hex: [https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_3phase/compiled](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_3phase/compiled)
-
-*Note: Firmware's EmonPi2_DB_6CT_1phase & EmonPi2_DB_6CT_3phase is the same underlying firmware as EmonTxV4_DB_3phase_6CT.*
+**[EmonPi2_DB_6CT_1phase:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase)** Single phase, 6 CT channel, continuous sampling using the new emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output. *Temperature sensing and radio receiver handled by connected RaspberryPi.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase/compiled)
 
 ---
 
-**[EmonPi2_CM_3x_temperature_transmitter:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_3x_temperature_transmitter)** Single phase, 6 CT channel, continuous sampling using the emonLibCM library, cumulative energy persisted to EEPROM, serial configuration and data output. With temperature sensing support for use in standalone transmitter mode (not connected to a RaspberryPi that otherwise can handle temperature sensing).
+**[EmonPi2_DB_6CT_3phase:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_3phase)** Three phase, 6 CT channel, continuous sampling using the new emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output. *Temperature sensing and radio receiver handled by connected RaspberryPi.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_3phase/compiled)
 
-Please see [EmonTx4 DS18B20 Temperature sensing & firmware release 1.5.7](https://community.openenergymonitor.org/t/emonpi2-ds18b20-temperature-sensing-firmware-release-1-5-7/23496/2) for note on performance implications.
+---
+
+**[EmonPi2_CM_3x_temperature_transmitter:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_3x_temperature_transmitter)** Designed for use when emonPi2 measurement board is used in standalone transmitter mode and where temperature sensing is required. Single phase, 6 CT channel, continuous sampling using the emonLibCM library, cumulative energy persisted to EEPROM, serial configuration and data output. *See [EmonTx4 DS18B20 Temperature sensing & firmware release 1.5.7](https://community.openenergymonitor.org/t/emonpi2-ds18b20-temperature-sensing-firmware-release-1-5-7/23496/2) for note on performance implications.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_3x_temperature_transmitter/compiled)
 
 ## Updating firmware using an emonPi/emonBase (recommended)
 
