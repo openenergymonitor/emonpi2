@@ -79,4 +79,16 @@ It's possible to link analog input AIN19 (CT12) to right-most terminal block as 
 The analog input voltage must be in the range **0 - 1.024V**. This ADC is configured for this range in order to suit the 333mV CT sensors. This analog input can not be used when using the emonPi2 with the C.T Extender board.
 ```
 
-Using the analog input requires compiling and uploading custom firmware: `EmonPi2_DB_6CT_1phase_with_analog`. A minor modification is added in this firmware example which prints the analog value to the serial port.
+Using the analog input requires uploading firmware: `EmonPi2_DB_6CT_1phase_with_analog` (Available from the local Emoncms firmware update tool). A minor modification is added in this firmware example which prints the analog value to the serial port.
+
+With this firmware loaded the analog input will appear in the input list.
+
+The following set of screenshots gives an example of configuring this analog input for use in reading the flow rate from a Sika VFS flow sensor. The flow rate is then used together with measurement of flow and return temperature to calculate heat.
+
+![sika_inputs.png](img/sika_inputs.png)
+
+![analog_input_processors.png](img/analog_input_processors.png)
+
+![dt_heat_processors.png](img/dt_heat_processors.png)
+
+![sika_feeds.png](img/sika_feeds.png)
