@@ -315,6 +315,7 @@ void setup()
   // EmonLibDB_setPulseMinPeriod(3, 0, RISING);   // No contact bounce expected, trigger on the rising edge
   // EmonLibDB_setPulseCount(3, 123);             // Initialise the pulse count for this to 123 counts
 
+  EmonLibDB_setAnalogueEnable(true);
   /****************************************************************************
   *                                                                           *
   * Pre-set Energy counters                                                   *
@@ -382,6 +383,8 @@ void loop()
     }
     
     emonpi.pulse = EmonLibDB_getPulseCount(1);
+
+    int analog = EmonLibDB_getAnalogueCount();
         
     if (EEProm.rf_on) {
       PayloadTX tmp = emonpi;
@@ -413,6 +416,9 @@ void loop()
 
       // Pulse counting disabled as standard
       // Serial.print(F(",\"pulse\":")); Serial.print(emonpi.pulse);
+
+      Serial.print(F(",\"analog\":")); Serial.print(analog);
+      
       Serial.println(F("}"));
       delay(60);
       
@@ -435,6 +441,8 @@ void loop()
       
       // Pulse counting disabled as standard
       // Serial.print(F(",pulse:")); Serial.print(emonpi.pulse);
+
+      Serial.print(F(",analog:")); Serial.print(analog);
       
       if (!EEProm.showCurrents) {
         Serial.println();
