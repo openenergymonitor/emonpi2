@@ -69,4 +69,14 @@ On pulse detection, the pulse inputs will appear on the Emoncms inputs page:
 
 ![emoncms_emonhub_pulseinputs.png](img/emoncms_emonhub_pulseinputs.png)
 
+## Analog input
 
+It's possible to link analog input AIN19 (CT12) to right-most terminal block as shown here. An example application is measuring flow rate using a Sika VFS which has an analog voltage output.
+
+![emonPi2_analog_input.png](img/emonPi2_analog_input.png)
+
+```{warning}
+The analog input voltage must be in the range **0 - 1.024V**. This ADC is configured for this range in order to suit the 333mV CT sensors. This analog input can not be used when using the emonPi2 with the C.T Extender board.
+```
+
+Using the analog input requires compiling and uploading custom firmware: `EmonPi2_DB_6CT_1phase_with_analog`. A minor modification is added in this firmware example which prints the analog value to the serial port.
