@@ -20,34 +20,40 @@ The emonPi2 firmware can be edited and compiled using [PlatformIO](https://platf
 
 ## Updating firmware
 
-The easiest way of updating the emonPi2 firmware is to use the firmware upload tool available at `Setup > Admin > Update > Firmware`.
+The easiest way of updating the emonPi2 firmware is to use the firmware upload tool.
 
-![emonsd_firmware_upload.png](img/emonsd_firmware_upload2.png)
+1. In your local emonPi2 web interface, navigate to: `Setup > Admin > Update > Firmware`.
+2. Select serial port `ttyAMA0` and then select `emonPi2` from hardware.
+3. Select firmware variant as required.
 
-Select serial port 'ttyAMA0' and then select 'emonPi2' from hardware.
+![emonPi2_emoncms_firmware_update.png](img/emonPi2_emoncms_firmware_update.png)
+
 
 ## Upload pre-compiled using EmonScripts emonupload2 tool 
 
 On the emonPi/emonBase ensure EmonScripts is updated to latest version then run emonupload2 tool 
 
-    /opt/openenergymonitor/EmonScripts/emonupload2.py
+    cd /opt/openenergymonitor/EmonScripts
+    ./emonupload2.py
 
 Select hardware then firmware version
 
 ```
 Select hardware:
   1. emonPi2
-  2. emonPi2
+  2. emonTx4
   3. emonPi
   4. emonTx3
   5. rfm69pi
   6. rfm12pi
   7. emonTH2
-  
 Enter number:1
 
 Select firmware:
-1. emonPi2_DB_6CT                          1.0.1      (Standard LowPowerLabs)
+1. EmonPi2_DB_6CT_1phase                   1.0.2      (Standard LowPowerLabs)
+2. EmonPi2_DB_6CT_3phase                   1.0.2      (Standard LowPowerLabs)
+3. EmonPi2_CM_3x_temperature_transmitter   1.5.7      (Standard LowPowerLabs)
+
 ```
 
 emonupload2 tool can also be run on any other linux computer by cloning the EmonScripts repo then running the emonupload2.py python script. Python3 required 
@@ -60,7 +66,7 @@ Alternatively to upload the same pre-compiled firmware via command line on emonP
 
     avrdude -C/opt/openenergymonitor/EmonScripts/update/avrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonPi2_DB_6CT_1phase_v1_0_2.ino.hex:i 
 
-Or using differant computer, ensure `avrdude.conf` has `avr128db48` entry i.e DxCore see below instructions 
+Or using different computer, ensure `avrdude.conf` has `avr128db48` entry i.e DxCore see below instructions 
 
     avrdude -Cavrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonPi2_DB_6CT_1phase_v1_0_2.ino.hex:i 
     
