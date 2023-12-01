@@ -23,16 +23,50 @@ GND (black), DATA (yellow), 3.3V (red), left to right, repeated for each of the 
 
 The function of the emonPi2 terminal blocks can be changed with small solder-jumpers just above the terminals on the measurement board PCB. The default configuration is 2x temperature sensor inputs, one on each terminal block. Notice the bridged solder jumpers labelled 'TMP' in the picture below: 
 
-![terminal_block_solderpads.png](img/terminal_block_solderpads.png)
+![emonPi2_temperature_inputs.png](img/emonPi2_temperature_inputs.png)
 
 The DS18B20 input is connected to GPIO17 on the RaspberryPi via the GPIO connection header. *It is also connected to digital PIN_PB4 on the AVR128DB48 microcontroller for use in transmitter mode with the emonLibCM library only (not standard).*
 
-```{tip}
-It's possible to change the function of the 'Data' pin on each of the terminal blocks. 
+## Pulse counting
 
-- Terminal 1 (left) can be either a pulse input (AVR-DB PIN_PB5) or temperature sensing (Pi GPIO17)
-- Terminal 2 (right) can be either a pulse input (AVR-DB PIN_PC0) or temperature sensing (Pi GPIO17)
+While the left hand side terminal block inputs are configured for temperature sensing as standard, it's possible to change the function of the 'Data' pin on each of the terminal block inputs. The following picture shows both inputs configured for pulse counting rather than temperature sensing, notice the moved solder pad bridges:
 
-Move the solder link as required to configure these for your application.
+![emonPi2_pulse_inputs.png](img/emonPi2_pulse_inputs.png)
+
+```{note}
+<b>T1</b> can be either a pulse input (<b>Pi GPIO27 PIN13</b> or AVR-DB PIN_PB5) or temperature sensing (<b>Pi GPIO17</b> or AVR-DB PIN_PB4)
+
+<b>T2</b> can be either a pulse input (<b>Pi GPIO22 pin-15</b> or AVR-DB PIN_PC0) or temperature sensing (<b>Pi GPIO17</b> or AVR-DB PIN_PB4)
 ```
+
+When running the standard emonPi2 single phase or three phase firmware pulse counting is handled by the EmonHub software running on the attached RaspberryPi. 
+
+Add the following `emonhub.conf` interfacer configuration to enable reading on the applicable pulse inputs: 
+
+```
+[[pulse1]]
+    Type = EmonHubPulseCounterInterfacer
+    [[[init_settings]]]
+        pulse_pin = 13
+        # bouncetime = 2
+        # rate_limit = 2
+    [[[runtimesettings]]]
+        pubchannels = ToEmonCMS,
+        nodeoffset = 1
+
+[[pulse2]]
+    Type = EmonHubPulseCounterInterfacer
+    [[[init_settings]]]
+        pulse_pin = 15
+        # bouncetime = 2
+        # rate_limit = 2
+    [[[runtimesettings]]]
+        pubchannels = ToEmonCMS,
+        nodeoffset = 2
+```
+
+On pulse detection, the pulse inputs will appear on the Emoncms inputs page:
+
+![emoncms_emonhub_pulseinputs.png](img/emoncms_emonhub_pulseinputs.png)
+
 
