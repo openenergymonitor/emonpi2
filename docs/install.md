@@ -92,9 +92,11 @@ With 6 CT sensor cables and often more cable than you need it's easy for an inst
 
 - **If the emonPi2 is powered up without Ethernet connected it will create a Wi-Fi Access Point** called `emonpi`. Connect to this using password `emonpi2016`. Browse the IP address [http://192.168.42.1](http://192.168.42.1) and follow the setup wizard to connect the device to your local Wi-Fi network.
 - **Once connected via Wi-Fi or Ethernet** the base-station can be accessed via [http://emonpi](http://emonpi) or [http://emonpi.local](http://emonpi.local). If you are unable to locate the emonPi2 via this hostname, try using a network scanner app such as ['Fing'](https://play.google.com/store/apps/details?id=com.overlook.android.fing&hl=en_GB&gl=US) or ['Network Analyser'](https://play.google.com/store/apps/details?id=net.techet.netanalyzerlite.an&hl=en_GB&gl=US) to list the IP addresses of devices on your network or check the device list on your router.
-- **The emonPi2 should now present the emoncms login screen.** Create a local account, save the password and login.
+- **The emonPi2 should now present the emoncms login screen.** Login with default username `emonsd` and password `emonsd`, these can be chnaged once logged in.
 
 ### CT calibration selection
+
+Differant rating CT sensors e.g 100A, 50A, 20A etc, require differant preset calibrations.  
 
 CT calibration is usually pre-configured in the shop as part of the order process, but you may wish to double check that your calibration configuration matches the sockets that you have plugged the CT sensors into at this point.
 
