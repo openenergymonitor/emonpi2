@@ -8,8 +8,8 @@ CT calibration is usually pre-configured in the shop as part of the order proces
 
 - Navigate to `Setup > Admin > Serial Config`
 - Click on `Stop EmonHub` to temporarily stop the EmonHub service while we perform calibration.
-- Select firmware version `emonLibDB`.
 - Select serial port `/dev/ttyAMA0` and click `Connect`.
+- Select firmware version `emonLibDB`.
 - After a couple of seconds the emonPi2 will print out its current configuration which will populate the interface (if it does not do this type `l` and click `Send` to reload the calibration details from the emonPi2 measurement board).
 - Adjust the  CT rating to match the CT sensor that you have installed on each channel.
 - Click on `Save Changes` to ensure that the new configuration is recorded such that it persists when you power cycle the board.
