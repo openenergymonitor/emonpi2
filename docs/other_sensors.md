@@ -69,6 +69,14 @@ On pulse detection, the pulse inputs will appear on the Emoncms inputs page:
 
 ![emoncms_emonhub_pulseinputs.png](img/emoncms_emonhub_pulseinputs.png)
 
+**It is also possible to use the analog input for pulse counting.** Upload firmware *emonPi2 DB single phase, 6 channel firmware, pulse on analog input, lowpowerlabs* via the Admin > Update > Firmware tool.
+
+The OpenEnergyMonitor pulse counter can connected like this:
+
+![emonPi2_pulse_input_analog.jpg](img/emonPi2_pulse_input_analog.jpg)
+
+This pulse input will appear alongside the energy monitoring data from the emonPi2 on the emoncms inputs page. Note that the voltage sensor is required for this firmware to work.
+
 ## Analog input
 
 It's possible to link analog input AIN19 (CT12) to right-most terminal block as shown here. An example application is measuring flow rate using a Sika VFS which has an analog voltage output.
