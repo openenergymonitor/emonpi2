@@ -69,6 +69,8 @@ On pulse detection, the pulse inputs will appear on the Emoncms inputs page:
 
 ![emoncms_emonhub_pulseinputs.png](img/emoncms_emonhub_pulseinputs.png)
 
+---
+
 **It is also possible to use the analog input for pulse counting.** Upload firmware *emonPi2 DB single phase, 6 channel firmware, pulse on analog input, lowpowerlabs* via the Admin > Update > Firmware tool.
 
 The OpenEnergyMonitor pulse counter can connected like this:
