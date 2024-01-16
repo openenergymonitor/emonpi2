@@ -65,7 +65,10 @@ Select firmware:
 1. EmonPi2_DB_6CT_1phase                   1.0.2      (Standard LowPowerLabs)
 2. EmonPi2_DB_6CT_3phase                   1.0.2      (Standard LowPowerLabs)
 3. EmonPi2_CM_3x_temperature_transmitter   1.5.7      (Standard LowPowerLabs)
-
+4. EmonPi2_DB_6CT_1phase_with_analog       1.0.3      (Standard LowPowerLabs)
+5. EmonPi2_DB_6CT_1phase_pulse_on_analog   1.0.3      (Standard LowPowerLabs)
+6. EmonPi2_CM_6CT_current_only             1.0.1      (Standard LowPowerLabs)
+Enter number:
 ```
 
 emonupload2 tool can also be run on any other linux computer by cloning the EmonScripts repo then running the emonupload2.py python script. Python3 required 
