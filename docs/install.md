@@ -77,7 +77,7 @@ The emonPi2 requires voltage output CT sensors, it is not compatible with the ol
 ```
 
 ```{tip} 
-With 6 CT sensor cables and often more cable than you need it's easy for an installation to look like a hive of wires! A little electrical trunking can go a long way to tidying it all up, allowing for excess cable to be looped back on itself.
+With 6 CT sensor cables and often more cable than you need, it's easy for an installation to look like a hive of wires! A little electrical trunking can go a long way to tidying it all up, allowing for excess cable to be looped back on itself.
 ```
 
 ## 3. emonPi2 Installation
@@ -88,15 +88,69 @@ With 6 CT sensor cables and often more cable than you need it's easy for an inst
 
 - Connect the RJ45 cable (ethernet sized connector with 8 pins) from the emonVs voltage sensor and power supply to the RJ45 socket on the opposite side of the case to the CT sensor sockets. (If you have the RaspberryPi 4 variant of the emonPi2 the RaspberryPi Ethernet socket is on the same side as the CT sensors, avoid plugging the emonVs RJ45 cable into the Ethernet socket and vice versa).
 
-### Once the emonPi2 is powered up
+## 4. Startup and display menu
 
-- **If the emonPi2 is powered up without Ethernet connected it will create a Wi-Fi Access Point** called `emonpi`. Connect to this using password `emonpi2016`. Browse the IP address [http://192.168.42.1](http://192.168.42.1) and follow the setup wizard to connect the device to your local Wi-Fi network.
-- **Once connected via Wi-Fi or Ethernet** the base-station can be accessed via [http://emonpi](http://emonpi) or [http://emonpi.local](http://emonpi.local). If you are unable to locate the emonPi2 via this hostname, try using a network scanner app such as ['Fing'](https://play.google.com/store/apps/details?id=com.overlook.android.fing&hl=en_GB&gl=US) or ['Network Analyser'](https://play.google.com/store/apps/details?id=net.techet.netanalyzerlite.an&hl=en_GB&gl=US) to list the IP addresses of devices on your network or check the device list on your router.
-- **The emonPi2 should now present the emoncms login screen.** Login with default username `emonsd` and password `emonsd`, these can be changed once logged in.
+With the emonPi2 powered up a simple `emonPi2 starting...` message will be printed on the display. The RaspberryPi is booting at this point which usually takes around 40 seconds: 
 
-### CT calibration selection
+![emonPi2_starting.JPG](img/emonPi2_starting.JPG)
 
-Differant rating CT sensors e.g 100A, 50A, 20A etc, require differant preset calibrations.  
+Once booted the display will print the SD card image version and emonPi2 serial number: 
+
+![emonPi2_serial_number.JPG](img/emonPi2_serial_number.JPG)
+
+Scroll through the display menu by pushing the button above the display. The menu items are:
+
+1. emonSD image version and hardware serial number.
+2. Time and date and uptime
+3. Ethernet status (or if connected IP Address)
+4. WiFi status (or if connected IP Address)
+5. WiFi Access Point (AP) status and if enabled IP Address
+6. Enable or Disable WiFi Access Point (press and hold for 5 seconds to change)
+7. GSM status, IP Address (requires additional hardware, not standard)
+8. Enable or Disable SSH access (press and hold for 5 seconds to change)
+9. Shutdown gracefully (press and hold for 5 seconds)
+
+```{note}
+When the emonPi2 is first powered up the WiFi Access Point is enabled for 10 minutes. Page 5 will show the WiFi Access Point as `WiFi AP: YES` followed by the access point IP address `192.168.42.1`. The access point is enabled at startup primarily for emonBase systems which do not have a push button, providing a way to configure or reconfigure WiFi during this startup window. It is possible to turn this off if prefered.
+``` 
+
+## 5. Connecting via Ethernet
+
+If a wired ethernet connection is available and you have the emonPi2 hardware that supports Ethernet (e.g RaspberryPi 4 shop option), this does usually give the most reliable result. We recommend using shielded Etherent cable to reduce potential electromagnetic interference. Simply plug the Ethernet cable into the Ethernet port found next to the USB ports and CT sensor inputs - *NOT the RJ45 port used for the emonVs voltage sensor and power supply*.
+
+Scroll to page 3 on the emonPi2 display to find the assigned IP address.
+
+
+
+## 6. Connecting via WiFi
+
+**When the emonPi2 is powered up it will create a Wi-Fi Access Point** called `emonPi`. Connect to this using password `emonpi2016`. On Android devices a captive portal option should pop up with the option to 'Sign in'. This will bring up the Wi-Fi configuration interface.
+
+```{note}
+While captive portal generally works well on Android phones, the current software version may not always provide a consistent captive portal 'Sign in' popup on other devices and browsers. If no 'Sign in' option appears browse manually to the IP address [http://192.168.42.1](http://192.168.42.1).
+```
+
+1\. Click on 'Connect to WiFi network' to show the list of available WiFi networks. Click on the network that you wish to connect to.
+
+![wifi_ap_setup1.png](img/wifi_ap_setup1.png)
+
+2\. Enter the WiFi network passkey (often found at the back of the internet router). Click connect. Connecting to a network and relaying the status update back to the user interface typically takes around 20 seconds. Note down the assigned IP address and use this to connect to your emonPi2 once you are connected back to your home WiFi network.
+
+![wifi_ap_setup2.png](img/wifi_ap_setup2.png)
+
+```{note}
+The Pi Zero 2W hardware option will usually drop the access point WiFi connection a few seconds after clicking 'Connect'. Wait a few seconds, disable and re-enable WiFi on your phone, connect to the emonPi access point again and then bring up the network configuration interface via the 'Sign in' captive portal if available. The connection status and IP address can be accessed by reconnecing to the access point in this way.
+```
+
+The WiFi IP address can also be accessed by scrolling to page 4 on the emonPi LCD:
+
+![emonPi2_WiFi_IP.JPG](img/emonPi2_WiFi_IP.JPG)
+
+**The emonPi2 should now present the emoncms login screen.** If the Register button is not shown, login with default account username `emonsd` and password `emonsd`, these can be changed once logged in.
+
+## 7. CT calibration selection
+
+Different rating CT sensors e.g 100A, 50A, 20A etc, require differant preset calibrations.  
 
 CT calibration is usually pre-configured in the shop as part of the order process, but you may wish to double check that your calibration configuration matches the sockets that you have plugged the CT sensors into at this point.
 
@@ -111,7 +165,7 @@ CT calibration is usually pre-configured in the shop as part of the order proces
 
 ![serial_config.png](img/serial_config.png)
 
-### Setup input and feeds
+## 8. Setup input and feeds
 
 **Configure inputs by navigating to Setup > Inputs.** The emonPi2 will pop up here automatically under the `EmonPi2` node name.
 
