@@ -127,6 +127,10 @@ Scroll to page 3 on the emonPi2 display to find the assigned IP address.
 **When the emonPi2 is powered up it will create a Wi-Fi Access Point** called `emonPi`. Connect to this using password `emonpi2016`. On Android devices a captive portal option should pop up with the option to 'Sign in'. This will bring up the Wi-Fi configuration interface.
 
 ```{note}
+Captive portal and the new Wifi setup interface is available on emonSD_01Feb24 or newer. You may wish to upgrade to the latest emonSD image see the emonSD download section.
+```
+
+```{note}
 While captive portal generally works well on Android phones, the current software version may not always provide a consistent captive portal 'Sign in' popup on other devices and browsers. If no 'Sign in' option appears browse manually to the IP address [http://192.168.42.1](http://192.168.42.1).
 ```
 
@@ -146,11 +150,23 @@ The WiFi IP address can also be accessed by scrolling to page 4 on the emonPi LC
 
 ![emonPi2_WiFi_IP.JPG](img/emonPi2_WiFi_IP.JPG)
 
-**The emonPi2 should now present the emoncms login screen.** If the Register button is not shown, login with default account username `emonsd` and password `emonsd`, these can be changed once logged in.
+**The emonPi2 will now present the emoncms login screen.** If the Register button is not shown, login with default account username `emonsd` and password `emonsd`. We recommend changing the default username and password from the My Account page once logged in.
 
-## 7. CT calibration selection
+## 7. EmonCMS setup
 
-Different rating CT sensors e.g 100A, 50A, 20A etc, require differant preset calibrations.  
+EmonCMS is the main user interface on the emonPi/base, it can be used to store and visualise data locally or just used to configure posting data to a remote server, or both.
+
+The following guides are a useful resource, detailing how to use and make the most of the EmonCMS application:
+
+1. Start with [emonCMS: Getting started emonPi/Base](../emoncms/intro-rpi.md), this gives a useful overview of the main parts of Emoncms to familiarise with first. It discusses the difference between local and remote logging and introduces the emonHub software tool that is used alongside Emoncms to read data from the emonPi and any other connected sensors. See also the *Setup inputs and feeds* section below.
+
+2. The [Emoncms core concepts guide](../emoncms/coreconcepts.md) is a useful overview of terminology. What is an input, feed, device? What the difference is between the graph tool, other visualisations, apps and dashboards.
+
+3. There are number of pages that discuss how to use the EmonCMS graph tool: [View Graphs](../emoncms/graphs.md), [Calculating Averages](../emoncms/daily-averages.md), [Calculating Daily kWh](../emoncms/daily-kwh.md), [Exporting CSV data](../emoncms/export-csv.md).
+
+## 8. CT calibration selection
+
+Different rating CT sensors e.g 100A, 50A, 20A etc, require differant preset calibrations.
 
 CT calibration is usually pre-configured in the shop as part of the order process, but you may wish to double check that your calibration configuration matches the sockets that you have plugged the CT sensors into at this point.
 
@@ -165,7 +181,7 @@ CT calibration is usually pre-configured in the shop as part of the order proces
 
 ![serial_config.png](img/serial_config.png)
 
-## 8. Setup input and feeds
+## 9. Setup input and feeds
 
 **Configure inputs by navigating to Setup > Inputs.** The emonPi2 will pop up here automatically under the `EmonPi2` node name.
 
@@ -174,19 +190,11 @@ CT calibration is usually pre-configured in the shop as part of the order proces
 **The next step is to log the input data to feeds.** Inputs are just placeholders showing the latest values sent from the emonPi2, we need to create feeds if we want to record a time-series of these values. It’s possible to either manually configure each input as required, or if you just want to record everything for now and delete what you don’t need later, then you can use the pre-configured Device Template.
 
 ```{tip} 
-Input configuration using the emonPi2 device template:** On the Setup > Inputs page, Click on the cog icon (top right corner) of the emonPi2 node. The 'Configure Device' window will appear, click on 'emonPi2 Standard', you may need to scroll down a little in the Devices pane to find. Click 'Save' and 'Initialize'. This will create feeds that record real power and cumulative energy for each channel, Vrms, total message count, temperatures and total pulse count. Navigate to Setup > Feeds to see these feeds.
+**Input configuration using the emonPi2 device template:** On the Setup > Inputs page, Click on the cog icon (top right corner) of the emonPi2 node. The 'Configure Device' window will appear, click on 'emonPi2 Standard', you may need to scroll down a little in the Devices pane to find. Click 'Save' and 'Initialize'. This will create feeds that record real power and cumulative energy for each channel, Vrms, total message count, temperatures and total pulse count. Navigate to Setup > Feeds to see these feeds.
 ```
 
-**Manual input configuration:** You may only want to record specific channels or apply more complex input processing. See input processing guide.
+**Manual input configuration:** You may only want to record specific channels or apply more complex input processing.
 
 **With feeds created, explore the data using the graph view.** Navigate to Setup > Feeds and click on a feed of interest to open the graph view. Click on the drop down time selector near the title and select the last hour. Click and drag to zoom further to see the new data coming in.
 
 **Try creating an Emoncms App.** Click on the Apps tab. From the Available Apps list select 'My Electric' and click 'Create', Select a power feed for 'use' and cumulative kWh energy feed for 'use_kwh' and then click 'Launch App'. After a few days this will start to show a daily bar graph of consumption alongside the real-time power graph and totals. There are a wide variety of different app's to choose from depending on the application.
-
-
-## Installation Examples
-
-**Installation example**<br>
-In this installation example the emonVs has been hardwired into a suitable circuit breaker in the consumer unit. 5 CT sensors are clipped around individual circuits in the consumer unit and 1 CT sensor is clipped around the main supply to the house. A short strip of trunking here made all the difference for a neater finish!
-
-*Add installation example picture here*
