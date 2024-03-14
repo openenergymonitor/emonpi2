@@ -312,8 +312,8 @@ void setup()
   // EmonLibDB_setPulseMinPeriod(2, 20, FALLING); // Contact bounce must not last longer than 20 ms, trigger on the falling edge
 
   EmonLibDB_setPulseEnable(3, true);          // Disable counting on "Analog" input
-  EmonLibDB_setPulseMinPeriod(3, 20);         // Contact bounce must not last longer than 20 ms, trigger on the falling edge
-  // EmonLibDB_setPulseCount(3, 123);             // Initialise the pulse count for this to 123 counts
+  EmonLibDB_setPulseMinPeriod(3, 5);          // Contact bounce must not last longer than 20 ms, trigger on the falling edge
+  // EmonLibDB_setPulseCount(3, 123);         // Initialise the pulse count for this to 123 counts
 
   /****************************************************************************
   *                                                                           *
