@@ -410,8 +410,7 @@ void loop()
       for (byte ch=0; ch<NUM_I_CHANNELS; ch++) {
         Serial.print(F(",\"E")); Serial.print(ch+1); Serial.print("\":"); Serial.print(emonpi.E[ch]);
       }
-
-      // Pulse counting disabled as standard
+      
       Serial.print(F(",\"pulse\":")); Serial.print(emonpi.pulse);
       Serial.println(F("}"));
       delay(60);
@@ -433,7 +432,6 @@ void loop()
         Serial.print(F(",E")); Serial.print(ch+1); Serial.print(":"); Serial.print(emonpi.E[ch]);
       }
       
-      // Pulse counting disabled as standard
       Serial.print(F(",pulse:")); Serial.print(emonpi.pulse);
       
       if (!EEProm.showCurrents) {
