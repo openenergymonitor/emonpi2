@@ -161,10 +161,10 @@ void setup()
   // ---------------------------------------------------------------------------------------
   
   #ifdef DEBUG
-    Serial.print(F("emonPi2 DB Continuous Monitoring V")); Serial.write(firmware_version);
+    Serial.print(F("EmonPi2_DB_6CT_3phase_pulse_on_analog V")); Serial.write(firmware_version);
     Serial.println(F("OpenEnergyMonitor.org"));
   #else
-    Serial.println(F("describe:EmonPi2DB"));
+    Serial.println(F("describe:EmonPi2_DB_6CT_3phase_pulse_on_analog"));
   #endif
 
   for (byte ch=0; ch<NUM_I_CHANNELS; ch++) {
