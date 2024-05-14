@@ -8,11 +8,27 @@ github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/firmwar
 
 There are currently 3 pre-compiled firmware options available via both the Emoncms firmware upload tool and the command line emonupload.py firmware tool:
 
-- **emonPi2_DB_6CT_1phase**: emonTx4 DB single phase, 6 channel firmware, pulse on analog.
-- **emonPi2_DB_6CT_3phase**: emonTx4 DB three phase, 6 channel firmware, pulse on analog.
-- **emonPi2_CM_6CT**: emonTx4 CM single phase, 6 channel firmware, pulse on analog. Can be used without an emonVs voltage sensor (current only).
+**emonPi2_DB_6CT_1phase**<br>
+Use this firmware for single phase electricity monitoring with up to 6 CT sensors. Pulse sensing is also configured on the emonPi2 analog input port. Receiving radio data via the RFM69CW radio and temperature sensing is handled by the RaspberryPi itself leaving this firmware to focus solely on electricity monitoring and pulse counting. Voltage & CT sensor calibration and pulse sensor configuration can be applied via serial configuration. This firmware uses the emonLibDB library and is compiled from the `emon_DB_6CT` base firmware.
 
-These are now built from a set of base firmware's common to all AVR-DB hardware variants (emonTx4, emonTx5 and emonPi2) available in the [avrdb_firmware repository](https://github.com/openenergymonitor/avrdb_firmware/). The base firmware's include further options available when compiling and uploading these firmwares via the Arduino IDE including:
+**emonPi2_DB_6CT_3phase**:<br>
+Use this firmware for three phase electricity monitoring with up to 6 CT sensors. Pulse sensing is also configured on the emonPi2 analog input port. Receiving radio data via the RFM69CW radio and temperature sensing is handled by the RaspberryPi itself leaving this firmware to focus solely on electricity monitoring and pulse counting. The phase allocation for each CT is as follows:
+
+- CT1: phase 1
+- CT2: phase 2
+- CT3: phase 3
+- CT4: phase 1
+- CT5: phase 2
+- CT6: phase 3
+
+Voltage & CT sensor calibration and pulse sensor configuration can be applied via serial configuration.<br>
+This firmware uses the emonLibDB library and is compiled from the `emon_DB_6CT` base firmware with the `#define NUM_V_CHANNELS 3`.
+
+- **emonPi2_CM_6CT**: Use this firmware for installations without an emonVs voltage sensor that require currently only monitoring. This firmware uses the older emonLibCM electricity monitoring library that provides a fallback option to an assumed RMS voltage value if no AC voltage signal is detected. The value of this `assumedVrms` can be set via serial configuration. This firmware uses the emonLibCM library and is compiled from the `emon_CM_6CT_temperature` base firmware. Note that temperature sensing is disabled when using this base firmware with the emonPi2 as the RaspberryPi reads from the temperature sensors directly.
+
+---
+
+The above firmware's are built from a set of base firmware's common to all AVR-DB hardware variants (emonTx4, emonTx5 and emonPi2) available in the [avrdb_firmware repository](https://github.com/openenergymonitor/avrdb_firmware/). The base firmware's include further options available when compiling and uploading these firmwares via the Arduino IDE including:
 
 - **emon_DB_12CT:** emonLibDB, single and three phase, 12 channel firmware support for the expansion board.
 - **Analog input:** Reading from the analog input can be enabled for all firmware variants via a `#define` compile option.
