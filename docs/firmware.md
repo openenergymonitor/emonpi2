@@ -4,31 +4,18 @@ github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/firmwar
 
 # Firmware
 
-The emonPi2 firmware can be edited and compiled using [PlatformIO](https://platfomrio.org/) (recommended) or [Arduino IDE](https://www.arduino.cc/) with [DxCore installed](https://github.com/SpenceKonde/DxCore). DxCore is an Arduino core for the AVR-DB microcontroller range, developed by SpenceKonde.
+**Updated: 14th May 2024**
 
-## Available Firmware
+There are currently 3 pre-compiled firmware options available via both the Emoncms firmware upload tool and the command line emonupload.py firmware tool:
 
-**[EmonPi2_DB_6CT_1phase:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase)** Single phase, 6 CT channel, continuous sampling using the new emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output. *Temperature sensing and radio receiver handled by connected RaspberryPi.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase/compiled)
+- **emonPi2_DB_6CT_1phase**: emonTx4 DB single phase, 6 channel firmware, pulse on analog.
+- **emonPi2_DB_6CT_3phase**: emonTx4 DB three phase, 6 channel firmware, pulse on analog.
+- **emonPi2_CM_6CT**: emonTx4 CM single phase, 6 channel firmware, pulse on analog. Can be used without an emonVs voltage sensor (current only).
 
----
+These are now built from a set of base firmware's common to all AVR-DB hardware variants (emonTx4, emonTx5 and emonPi2) available in the [avrdb_firmware repository](https://github.com/openenergymonitor/avrdb_firmware/). The base firmware's include further options available when compiling and uploading these firmwares via the Arduino IDE including:
 
-**[EmonPi2_DB_6CT_3phase:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_3phase)** Three phase, 6 CT channel, continuous sampling using the new emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output. *Temperature sensing and radio receiver handled by connected RaspberryPi.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_3phase/compiled)
-
----
-
-**[EmonPi2_CM_3x_temperature_transmitter:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_3x_temperature_transmitter)** Designed for use when emonPi2 measurement board is used in standalone transmitter mode *IF* temperature sensing is required. Single phase, 6 CT channel, continuous sampling using the emonLibCM library, cumulative energy persisted to EEPROM, serial configuration and data output. *See [EmonTx4 DS18B20 Temperature sensing & firmware release 1.5.7](https://community.openenergymonitor.org/t/emonpi2-ds18b20-temperature-sensing-firmware-release-1-5-7/23496/2) for note on performance implications.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_3x_temperature_transmitter/compiled)
-
----
-
-**[EmonPi2_DB_6CT_1phase_with_analog:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase_with_analog)** ANALOG INPUT ENABLED. Single phase, 6 CT channel, continuous sampling using the new emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output. *Temperature sensing and radio receiver handled by connected RaspberryPi.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase_with_analog/compiled)
-
----
-
-**[EmonPi2_DB_6CT_1phase_pulse_on_analog:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase_pulse_on_analog)** Pulse input on analog input. Single phase, 6 CT channel, continuous sampling using the new emonLibDB library, cumulative energy persisted to EEPROM, serial configuration and data output. *Temperature sensing and radio receiver handled by connected RaspberryPi.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_DB_6CT_1phase_pulse_on_analog/compiled)
-
----
-
-**[EmonPi2_CM_6CT_current_only:](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_6CT_current_only)** 6 CT channel current only firmware for applications without a voltage sensor, continuous sampling using the new emonLibCB library, serial configuration and data output. *Temperature sensing and radio receiver handled by connected RaspberryPi.*<br>**Download:** [Pre-compiled hex](https://github.com/openenergymonitor/emonpi2/tree/main/firmware/EmonPi2_CM_6CT_current_only/compiled)
+- **emon_DB_12CT:** emonLibDB, single and three phase, 12 channel firmware support for the expansion board.
+- **Analog input:** Reading from the analog input can be enabled for all firmware variants via a `#define` compile option.
 
 ## Updating firmware
 
@@ -39,7 +26,6 @@ The easiest way of updating the emonPi2 firmware is to use the firmware upload t
 3. Select firmware variant as required.
 
 ![emonPi2_emoncms_firmware_update.png](img/emonPi2_emoncms_firmware_update.png)
-
 
 ## Upload pre-compiled using EmonScripts emonupload2 tool 
 
@@ -52,22 +38,21 @@ Select hardware then firmware version
 
 ```
 Select hardware:
-  1. emonPi2
-  2. emonTx4
-  3. emonPi
-  4. emonTx3
-  5. rfm69pi
-  6. rfm12pi
-  7. emonTH2
-Enter number:1
+  1. emonTx5
+  2. emonPi2
+  3. emonTx4
+  4. emonPi
+  5. emonTx3
+  6. rfm69pi
+  7. rfm12pi
+  8. emonTH2
+  9. JeeLink
+Enter number:2
 
 Select firmware:
-1. EmonPi2_DB_6CT_1phase                   1.0.2      (Standard LowPowerLabs)
-2. EmonPi2_DB_6CT_3phase                   1.0.2      (Standard LowPowerLabs)
-3. EmonPi2_CM_3x_temperature_transmitter   1.5.7      (Standard LowPowerLabs)
-4. EmonPi2_DB_6CT_1phase_with_analog       1.0.3      (Standard LowPowerLabs)
-5. EmonPi2_DB_6CT_1phase_pulse_on_analog   1.0.3      (Standard LowPowerLabs)
-6. EmonPi2_CM_6CT_current_only             1.0.1      (Standard LowPowerLabs)
+1. emonPi2_DB_6CT_1phase                   2.1.0      (Standard LowPowerLabs)
+2. emonPi2_DB_6CT_3phase                   2.1.0      (Standard LowPowerLabs)
+3. emonPi2_CM_6CT                          1.6.0      (Standard LowPowerLabs)
 Enter number:
 ```
 
@@ -79,24 +64,30 @@ emonupload2 tool can also be run on any other linux computer by cloning the Emon
 
 Alternatively to upload the same pre-compiled firmware via command line on emonPi / emonBase: 
 
-    avrdude -C/opt/openenergymonitor/EmonScripts/update/avrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonPi2_DB_6CT_1phase_v1_0_2.ino.hex:i 
+    avrdude -C/opt/openenergymonitor/EmonScripts/update/avrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:emonPi2_DB_6CT_1phase_v2_1_0.ino.hex:i 
 
 Or using different computer, ensure `avrdude.conf` has `avr128db48` entry i.e DxCore see below instructions 
 
-    avrdude -Cavrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:EmonPi2_DB_6CT_1phase_v1_0_2.ino.hex:i 
+    avrdude -Cavrdude.conf -v -pavr128db48 -carduino -D -P/dev/ttyUSB0 -b115200 -Uflash:w:emonPi2_DB_6CT_1phase_v2_1_0.ino.hex:i 
     
-You will need avrdude installed (tested on version 6.3-2017) and the custom DxCore avrdude.conf. This can be downloaded here: [DxCore avrdude.conf](https://raw.githubusercontent.com/openenergymonitor/emonpi2/main/firmware/avrdude.conf).
+You will need avrdude installed (tested on version 6.3-2017) and the custom DxCore avrdude.conf. This can be downloaded here: [DxCore avrdude.conf](https://raw.githubusercontent.com/openenergymonitor/EmonScripts/master/update/avrdude.conf).
 
 ## How to compile and upload firmware
 
 ### Compile and Upload using PlatformIO (recommended)
 
-Clone the emonTx V4 repo 
+Clone the `avrdb_firmware` repo 
 
-    git clone https://github.com/openenergymonitor/emonpi2
-    cd emonpi2/firmware/EmonPi2_DB_6CT_1phase
+    git clone https://github.com/openenergymonitor/avrdb_firmware
+    cd avrdb_firmware/emon_DB_6CT
     
-Install PlatformIO core then to compile and upload  
+Open `emon_DB_6CT.ino` in an editor and change `#define EMONTX5` to `#define EMONPI2`. 
+
+Change any other compile options as required e.g:
+
+- to enable analog read uncomment `#define ENABLE_ANALOG`.
+    
+Install PlatformIO core then to compile and upload:
 
     pio run -t upload
 
@@ -139,6 +130,20 @@ Locate or create your Arduino Sketchbook directory (location found in Arduino pr
 
 5\. Download DxCore SpenceKonde OneWire library:<br>
 [https://github.com/SpenceKonde/OneWire](https://github.com/SpenceKonde/OneWire)
+
+**Open and edit the AVR-DB firmware**
+
+Clone the `avrdb_firmware` repo 
+
+    git clone https://github.com/openenergymonitor/avrdb_firmware
+
+Open the base firmware that you wish to use in the Arduino IDE e.g `emon_DB_6CT.ino`.
+
+Change `#define EMONTX5` to `#define EMONPI2`. 
+
+Change any other compile options as required e.g:
+
+- to enable analog read uncomment `#define ENABLE_ANALOG`.
 
 **Compilation settings:**
 
