@@ -4,9 +4,10 @@ github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/firmwar
 
 # Firmware
 
-**Updated: 14th May 2024**
-
+**Updated: 14th May 2024**<br>
 There are currently 3 pre-compiled firmware options available via both the Emoncms firmware upload tool and the command line emonupload.py firmware tool:
+
+---
 
 **emonPi2_DB_6CT_1phase**<br>
 Use this firmware for single phase electricity monitoring with up to 6 CT sensors. Pulse sensing is also configured on the emonPi2 analog input port. Receiving radio data via the RFM69CW radio and temperature sensing is handled by the RaspberryPi itself leaving this firmware to focus solely on electricity monitoring and pulse counting. Voltage & CT sensor calibration and pulse sensor configuration can be applied via serial configuration. This firmware uses the emonLibDB library and is compiled from the `emon_DB_6CT` base firmware.
@@ -24,7 +25,8 @@ Use this firmware for three phase electricity monitoring with up to 6 CT sensors
 Voltage & CT sensor calibration and pulse sensor configuration can be applied via serial configuration.<br>
 This firmware uses the emonLibDB library and is compiled from the `emon_DB_6CT` base firmware with the `#define NUM_V_CHANNELS 3`.
 
-- **emonPi2_CM_6CT**: Use this firmware for installations without an emonVs voltage sensor that require currently only monitoring. This firmware uses the older emonLibCM electricity monitoring library that provides a fallback option to an assumed RMS voltage value if no AC voltage signal is detected. The value of this `assumedVrms` can be set via serial configuration. This firmware uses the emonLibCM library and is compiled from the `emon_CM_6CT_temperature` base firmware. Note that temperature sensing is disabled when using this base firmware with the emonPi2 as the RaspberryPi reads from the temperature sensors directly.
+**emonPi2_CM_6CT**<br>
+Use this firmware for installations without an emonVs voltage sensor that require currently only monitoring. This firmware uses the older emonLibCM electricity monitoring library that provides a fallback option to an assumed RMS voltage value if no AC voltage signal is detected. The value of this `assumedVrms` can be set via serial configuration. This firmware uses the emonLibCM library and is compiled from the `emon_CM_6CT_temperature` base firmware. Note that temperature sensing is disabled when using this base firmware with the emonPi2 as the RaspberryPi reads from the temperature sensors directly.
 
 ---
 
