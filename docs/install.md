@@ -106,7 +106,6 @@ Scroll through the display menu by pushing the button above the display. The men
 4. WiFi status (or if connected IP Address)
 5. WiFi Access Point (AP) status and if enabled IP Address
 6. Enable or Disable WiFi Access Point (press and hold for 5 seconds to change)
-7. GSM status, IP Address (requires additional hardware, not standard)
 8. Enable or Disable SSH access (press and hold for 5 seconds to change)
 9. Shutdown gracefully (press and hold for 5 seconds)
 
@@ -172,14 +171,13 @@ CT calibration is usually pre-configured in the shop as part of the order proces
 
 - Navigate to `Setup > Admin > Serial Config`
 - Click on `Stop EmonHub` to temporarily stop the EmonHub service while we perform calibration.
-- Select firmware version `emonLibDB`.
 - Select serial port `/dev/ttyAMA0` and click `Connect`.
 - After a couple of seconds the emonPi2 will print out its current configuration which will populate the interface (if it does not do this type `l` and click `Send` to reload the calibration details from the emonPi2 measurement board).
 - Adjust the  CT rating to match the CT sensor that you have installed on each channel.
 - Click on `Save Changes` to ensure that the new configuration is recorded such that it persists when you power cycle the board.
 - When finished, click on `Stop Serial` to disconnect the serial configuration tool and then `Start EmonHub` to restart the EmonHub service.
 
-![serial_config.png](img/serial_config.png)
+![emonPi2_serial_config.png](img/emonPi2_serial_config.png)
 
 ## 9. Setup input and feeds
 
@@ -198,3 +196,7 @@ CT calibration is usually pre-configured in the shop as part of the order proces
 **With feeds created, explore the data using the graph view.** Navigate to Setup > Feeds and click on a feed of interest to open the graph view. Click on the drop down time selector near the title and select the last hour. Click and drag to zoom further to see the new data coming in.
 
 **Try creating an Emoncms App.** Click on the Apps tab. From the Available Apps list select 'My Electric' and click 'Create', Select a power feed for 'use' and cumulative kWh energy feed for 'use_kwh' and then click 'Launch App'. After a few days this will start to show a daily bar graph of consumption alongside the real-time power graph and totals. There are a wide variety of different app's to choose from depending on the application.
+
+## 1 phase or 3 phase firmware? Pi Zero with the CT expansion board?
+
+We will in most cases upload the relevant firmware in the shop that matches the order placed. But if you need to change the firmware configuration this is also very much an option with the emonPi2. Please see the [Frimware](firmware.md) page for details about the different options.

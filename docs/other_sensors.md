@@ -25,9 +25,22 @@ The function of the emonPi2 terminal blocks can be changed with small solder-jum
 
 ![emonPi2_temperature_inputs.png](img/emonPi2_temperature_inputs.png)
 
-The DS18B20 input is connected to GPIO17 on the RaspberryPi via the GPIO connection header. *It is also connected to digital PIN_PB4 on the AVR128DB48 microcontroller for use in transmitter mode with the emonLibCM library only (not standard).*
+The DS18B20 input is connected to GPIO17 on the RaspberryPi via the GPIO connection header. *It is also connected to digital PIN_PB4 on the AVR128DB48 microcontroller for use in transmitter mode as part of an emonTx5.
 
 ## Pulse counting
+
+**Update 14th May 2024:** When running the latest emonPi2 single phase or three phase firmware, pulse counting is attached to the analog input as standard which leaves the other terminals for easier connection of multiple temperature sensors.
+
+The OpenEnergyMonitor pulse counter can connected like this:
+
+
+![emonPi2_pulse_input_analog.jpg](img/emonPi2_pulse_input_analog.jpg)
+
+This pulse input will appear alongside the energy monitoring data from the emonPi2 on the emoncms inputs page. Note that the voltage sensor is required for this firmware to work.
+
+---
+
+**Pulse sensing using the terminals labelled 'temperature'**:
 
 While the left hand side terminal block inputs are configured for temperature sensing as standard, it's possible to change the function of the 'Data' pin on each of the terminal block inputs. The following picture shows both inputs configured for pulse counting rather than temperature sensing, notice the moved solder pad bridges:
 
@@ -39,9 +52,9 @@ While the left hand side terminal block inputs are configured for temperature se
 <b>T2</b> can be either a pulse input (<b>Pi GPIO22 pin-15</b> or AVR-DB PIN_PC0) or temperature sensing (<b>Pi GPIO17</b> or AVR-DB PIN_PB4)
 ```
 
-When running the standard emonPi2 single phase or three phase firmware pulse counting is handled by the EmonHub software running on the attached RaspberryPi. 
 
-Add the following `emonhub.conf` interfacer configuration to enable reading on the applicable pulse inputs: 
+
+It is easy to increase the number of pulse inputs when temperature sensing is not required. Simply select the P1 and P2 solder bridges above and add the following emonhub.conf interfacer configuration. This will enable direct readings from the applicable pulse inputs on the Pi, bypassing the AVR-DB microcontroller:
 
 ```
 [[pulse1]]
@@ -71,14 +84,6 @@ On pulse detection, the pulse inputs will appear on the Emoncms inputs page:
 
 ---
 
-**It is also possible to use the analog input for pulse counting.** Upload firmware *emonPi2 DB single phase, 6 channel firmware, pulse on analog input, lowpowerlabs* via the Admin > Update > Firmware tool.
-
-The OpenEnergyMonitor pulse counter can connected like this:
-
-![emonPi2_pulse_input_analog.jpg](img/emonPi2_pulse_input_analog.jpg)
-
-This pulse input will appear alongside the energy monitoring data from the emonPi2 on the emoncms inputs page. Note that the voltage sensor is required for this firmware to work.
-
 ## Analog input
 
 It's possible to link analog input AIN19 (CT12) to right-most terminal block as shown here. An example application is measuring flow rate using a Sika VFS which has an analog voltage output.
@@ -89,7 +94,33 @@ It's possible to link analog input AIN19 (CT12) to right-most terminal block as 
 The analog input voltage must be in the range **0 - 1.024V**. This ADC is configured for this range in order to suit the 333mV CT sensors. This analog input can not be used when using the emonPi2 with the C.T Extender board.
 ```
 
-Using the analog input requires uploading firmware: `EmonPi2_DB_6CT_1phase_with_analog` (Available from the local Emoncms firmware update tool). A minor modification is added in this firmware example which prints the analog value to the serial port.
+Using the analog input requires compiling and uploading custom configuration of the emonPi2 firmware. Start by setting up the Arduino IDE environment following the [firmware guide](firmware.md).
+
+Open the base firmware `emon_DB_6CT` from the [avrdb_firmware](https://github.com/openenergymonitor/avrdb_firmware) firmware repository.
+
+1\. Make sure to select EMONPI2 as the hardware variant:
+
+```
+// 1. Set hardware variant
+// Options: EMONTX4, EMONTX5, EMONPI2
+#define EMONPI2
+```
+
+2\. Uncomment the line `#define ENABLE_ANALOG`:
+
+```
+// 6. Enable analog reading (disabled by default)
+// #define ENABLE_ANALOG
+```
+
+3\. Select 1phase or 3phase as required:
+
+```
+// 3. Set number of voltage channels (1 for single phase, 3 for three phase)
+#define NUM_V_CHANNELS 1
+```
+
+4\. Compile and upload the firmware to the emonPi2
 
 With this firmware loaded the analog input will appear in the input list.
 
