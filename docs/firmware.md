@@ -14,7 +14,7 @@ There are currently 5 pre-compiled firmware options for the emonPi2 available vi
 
 2. Are you using a 6 channel expander for a total of 12 CT channels?<br>
 
-*Note: Temperature sensing is handled by the RaspberryPi separately and so is not limited by firmware choice.*
+*Note: Temperature sensing is handled by the RaspberryPi separately and so is not limited by firmware choice. The RFM69 radio transceiver is also handled by the RaspberryPi directly.*
 
 Select the right firmware from the list that matches the requirements of your application:
 
@@ -46,7 +46,7 @@ Select the right firmware from the list that matches the requirements of your ap
 
 - **Current only:** Supported by firmware 5 only, can be used with installations without an emonVs voltage sensor. These firmwares uses the older emonLibCM electricity monitoring library that has a fallback option to an assumed RMS voltage value if no AC voltage signal is detected.
 
-- **Temperature sensing:** Is handled by the RaspberryPi separately via the emonHub software and so is not limited by firmware choice. While there is no specific limit on the number of temperature sensors that can be connected we have only tested up to 6 temperature sensors at any one time.
+- **Temperature sensing:** Is handled by the RaspberryPi separately via the emonHub software and so is not limited by firmware choice. While there is no specific limit on the number of temperature sensors that can be connected but we have only tested up to 6 temperature sensors at any one time.
 
 - **Pulse sensing** is available on the 3 pin analog input terminal as default for all 6 CT firmwares but is disabled by default on the 12 CT firmwares as the analog input is used for CT 12. If temperature sensing is not required it is possible to configure pulse sensing on the terminal blocks connections typically used for temperature sensing.
 
