@@ -24,7 +24,7 @@ Select the right firmware from the list that matches the requirements of your ap
 | 2 | emonPi2_DB_6CT_3phase | 3-ph | 6 | 1* |
 | 3 | emonPi2_DB_12CT_1phase | 1-ph | 12 | 3* |
 | 4 | emonPi2_DB_12CT_3phase | 3-ph | 12 | 3* |
-| 5 | emonPi2_CM_6CT | 1-ph or current only | 6 | 1 |
+| 5 | emonPi2_CM_6CT | current only | 6 | 1 |
 
 *The pulse sensor * denote standard firmware support for the number of pulse sensors given. Firmware modification can extend the number of pulse sensors to 3 on all emonLibDB based firmwares.*
 
