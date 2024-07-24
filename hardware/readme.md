@@ -10,6 +10,8 @@ First release
 
 ### V2.0.1
 
+**manufactured in April 2023**
+
 - DFM tweaks 
 - Fix pad sizes 
 - Change USB-C connector footprint and enable duel orientation data connections 
