@@ -1,5 +1,5 @@
 ---
-github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/emonpi2_emonbase_install.md"
+github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/install.md"
 ---
 
 # emonPi2 Install Guide
