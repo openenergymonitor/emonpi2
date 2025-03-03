@@ -26,11 +26,11 @@ away from the load on the Neutral.
 
 4. Plug emonVs into mains power via a domestic wall socket
 
-6. (optionally) If you have the RaspberryPi 4 variant of the emonPi2 a hard wired Ethernet internet/LAN connection can be connected.
+5. (optionally) If you have the RaspberryPi 4 variant of the emonPi2 a hard wired Ethernet internet/LAN connection can be connected.
 
-7. Switch on mains socket. The display on the emonPi2 will show `emonPi2, starting..`. On the SD card side of the case the RaspberryPi 4 indicator LED should be visible through the black face plate.
+6. Switch on mains socket. The display on the emonPi2 will show `emonPi2, starting..`. On the SD card side of the case the RaspberryPi 4 indicator LED should be visible through the black face plate.
 
-8. Continue with step 5. emonBase Setup below.
+7. If using Ethernet, continue with [step 5. Connecting via Ethernet](#connecting-via-ethernet). If using WiFi, continue with [step 6. Connecting via WiFi](#connecting-via-wifi).
 
 ```{admonition} Instructions for safe use
 - Clip-on CT sensors are non-invasive and should not have direct contact with the AC mains. As a precaution, we recommend ensuring all cables are fully isolated prior to installing. If in doubt seek professional assistance.
