@@ -6,7 +6,7 @@ github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/firmwar
 
 **Updated: 14th May 2024**<br>
 
-There are currently 5 pre-compiled firmware options for the emonPi2 available via both the Emoncms firmware upload tool and the command line `emonupload.py` firmware tool. 
+There are currently 5 pre-compiled firmware options for the emonPi2 available via both the Emoncms firmware upload tool and the command line [emonupload.py](https://github.com/openenergymonitor/emonupload) firmware tool. 
 
 **To choose the right firmware, there are 2 main questions:**
 
