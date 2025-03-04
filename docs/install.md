@@ -49,13 +49,17 @@ A good place to start is to assess the location where you wish to install the em
 
 ## 1. emonVs installation
 
-There are two different ways of installing the emonVs voltage sensor:
+There are two different ways of installing the [emonVs voltage sensor](https://shop.openenergymonitor.com/power-supplies/):
 
 **Using the mains plug supplied:** If you have a convenient socket near-by this will be the easiest and quickest option.<br>
 
 **Direct installation:** The emonVs can be hardwired by a suitably competent person into a 6A or lower circuit protection device in the fuse board (consumer unit) or a 3A fused spur. The supplied emonVs mains power cable has a cross sectional area of 1.0mm<sup>2</sup>. This can provide a tidy installation if no socket is available and helps ensure higher monitoring uptime if sockets are at risk of being unplugged for use by other appliances.
 
 The emonVs unit can be wall mounted using the brackets on the enclosure.
+
+If in North America, you likely want the [3-phase version of the emonVS](https://shop.openenergymonitor.com/emonvs-3-phase-no-plug/), as this will allow you to use the split phase [firmware](firmware.md). The split phase firmware enables the most accurate power measurements.
+
+If you plan on using an [emonTx5 with your emonPi2](../emontx5/install.md), you will likely want an [emonVs RJ45 duplicator](https://shop.openenergymonitor.com/emonvs-rj45-duplicator/) to use a single emonVs with both devices.
 
 ## 2. CT sensor installation
 
