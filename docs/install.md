@@ -8,6 +8,7 @@ The following guide covers installation of the [emonPi2 6x input energy monitor 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XAJV5zDJF_4?si=5aG4XxaeXYWK0_xQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+
 **Hardware covered in this guide:**
 
 - [emonPi2: 6 input energy monitor](overview.md)
