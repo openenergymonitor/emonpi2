@@ -6,7 +6,7 @@ github_url: "https://github.com/openenergymonitor/emonpi2/blob/main/docs/install
 
 The following guide covers installation of the [emonPi2 6x input energy monitor and integrated base-station](overview.md).
 
-![emonPi2_complete_kit.jpg](img/emonPi2_complete_kit.jpg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XAJV5zDJF_4?si=5aG4XxaeXYWK0_xQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Hardware covered in this guide:**
 
@@ -40,6 +40,8 @@ away from the load on the Neutral.
 - Do not connect unapproved accessories
 - Please contact us if you have any questions
 ```
+
+![emonPi2_complete_kit.jpg](img/emonPi2_complete_kit.jpg)
 
 ---
 
