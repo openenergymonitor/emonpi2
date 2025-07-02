@@ -72,7 +72,7 @@ If you plan on using an [emonTx5 with your emonPi2](../emontx5/install.md), you 
 
 - CT sensors need to be clipped around the Live OR Neutral cable of the AC circuit to be measured (not both). The CT sensors have an indicated direction printed on the case `K->L`, where L is the direction of the load. That’s on the Line conductor, the arrow points away from the load on the Neutral. This will ensure the correct sign (+/-) on the power readings.
 
-- ![CTs on cables](img/CTs-on-cables-333mV.webp)
+  ![CTs on cables](img/CTs-on-cables-333mV.webp)
 
 - Take care not to compress the sensor with any sideways force as this can affect the accuracy of the measurement.
 
