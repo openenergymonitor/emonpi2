@@ -12,7 +12,7 @@ The following guide covers installation of the [emonPi2 6x input energy monitor 
 **Hardware covered in this guide:**
 
 - [emonPi2: 6 input energy monitor](overview.md)
-- [emonVs: Precision voltage sensor and power supply](voltage_sensors.md)
+- [emonVs: Precision voltage sensor and power supply](#1-emonvs-installation)
 - Up to 6 CT sensors
 - RJ45 voltage sensor and power supply cable
 
@@ -31,7 +31,7 @@ away from the load on the Neutral.
 
 6. Switch on mains socket. The display on the emonPi2 will show `emonPi2, starting..`. On the SD card side of the case the RaspberryPi 4 indicator LED should be visible through the black face plate.
 
-7. If using Ethernet, continue with [step 5. Connecting via Ethernet](#connecting-via-ethernet). If using WiFi, continue with [step 6. Connecting via WiFi](#connecting-via-wifi).
+7. If using Ethernet, continue with [step 5. Connecting via Ethernet](#5-connecting-via-ethernet). If using WiFi, continue with [step 6. Connecting via WiFi](#6-connecting-via-wifi).
 
 ```{admonition} Instructions for safe use
 - Clip-on CT sensors are non-invasive and should not have direct contact with the AC mains. As a precaution, we recommend ensuring all cables are fully isolated prior to installing. If in doubt seek professional assistance.
